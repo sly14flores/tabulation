@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 14, 2016 at 09:46 AM
+-- Generation Time: Dec 14, 2016 at 05:04 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.4.31
 
@@ -43,10 +43,29 @@ CREATE TABLE IF NOT EXISTS `consolation_prizes` (
 
 CREATE TABLE IF NOT EXISTS `contestants` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
+  `no` int(10) NOT NULL DEFAULT '0',
+  `cluster_name` varchar(100) NOT NULL,
+  `leader` varchar(100) NOT NULL,
   `remarks` varchar(100) NOT NULL,
+  `active` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `contestants`
+--
+
+INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `remarks`, `active`) VALUES
+(1, 0, 'ACCTG, BUDGET, PTO, LEGAL', 'FRENZILYN MAMARIL', '', 1),
+(2, 0, 'CMCH, RDH', 'LORENZO ORTEGA', '', 0),
+(3, 0, 'OPAG, OPVET & PSWDO', 'JOHN RAY DIAZ', '', 1),
+(4, 0, 'SP', 'JANE FLORES', '', 1),
+(5, 0, 'PITO, ASSESSOR, PPO', 'ARTHUR CORTEZ', '', 0),
+(6, 0, 'BDH, BALDH', 'MARK PARCHAMENTO', '', 1),
+(7, 0, 'LUMC', 'ARIANE AMPARO', '', 1),
+(8, 0, 'PHO, NDH', '', '', 1),
+(9, 0, 'OPG (All Divisions)', 'Aizel Trisha Joyce Villaremo', '', 1),
+(10, 0, 'PGSO, PPDC & PEO', 'DONG ALCANTARA', '', 1);
 
 -- --------------------------------------------------------
 
@@ -69,10 +88,18 @@ CREATE TABLE IF NOT EXISTS `criteria` (
 
 CREATE TABLE IF NOT EXISTS `judges` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
   `remarks` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `judges`
+--
+
+INSERT INTO `judges` (`id`, `last_name`, `first_name`, `remarks`) VALUES
+(1, 'Flores', 'Sly', '');
 
 -- --------------------------------------------------------
 
@@ -86,9 +113,16 @@ CREATE TABLE IF NOT EXISTS `preferences` (
   `on_going_contestant` int(10) NOT NULL,
   `minimum_score` int(10) NOT NULL,
   `maximum_score` int(10) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `on_going_contestant` (`on_going_contestant`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `signup_token` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `preferences`
+--
+
+INSERT INTO `preferences` (`id`, `title`, `on_going_contestant`, `minimum_score`, `maximum_score`, `signup_token`) VALUES
+(1, 'Sayaw Awit', 0, 5, 10, 161216);
 
 -- --------------------------------------------------------
 
@@ -130,12 +164,6 @@ CREATE TABLE IF NOT EXISTS `winners` (
 --
 ALTER TABLE `consolation_prizes`
   ADD CONSTRAINT `consolation_prizes_ibfk_1` FOREIGN KEY (`contestant_id`) REFERENCES `contestants` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Constraints for table `preferences`
---
-ALTER TABLE `preferences`
-  ADD CONSTRAINT `preferences_ibfk_1` FOREIGN KEY (`on_going_contestant`) REFERENCES `contestants` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `scores`

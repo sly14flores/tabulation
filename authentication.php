@@ -1,6 +1,6 @@
 <?php
 
 session_start();
-if (!isset($_SESSION['id'])) header("location: login.php");
+if (!isset($_SESSION['judge_id'])) header("location: login.php");
 
 ?>

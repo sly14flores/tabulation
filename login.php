@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+session_start();
+
+if (isset($_SESSION['judge_id'])) header("location: index.php");
+
+?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -75,26 +82,28 @@
                 </div>
             </div>
             <div class="row">
+			<form name="views.frmSignup" novalidate autocomplete="off">
                 <div class="col-md-6">
-                    <div class="form-group" ng-class="{'has-error': false}">
+                    <div class="form-group" ng-class="{'has-error': views.frmSignup.last_name.$invalid && views.frmSignup.last_name.$touched}">
 					<label>Last Name: </label>
-					<input type="text" class="form-control">
-					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="">Please provide Last Name</div>
+					<input type="text" class="form-control" name="last_name" ng-model="judge.last_name" required>
+					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="views.frmSignup.last_name.$invalid && views.frmSignup.last_name.$touched">Please provide Last Name</div>
 					</div>
-                    <div class="form-group" ng-class="{'has-error': false}">					
+                    <div class="form-group" ng-class="{'has-error': views.frmSignup.first_name.$invalid && views.frmSignup.first_name.$touched}">					
                     <label>First Name:  </label>
-                    <input type="text" class="form-control">
-					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="">Please provide First Name</div>					
+                    <input type="text" class="form-control" name="first_name" ng-model="judge.first_name" required>
+					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="views.frmSignup.first_name.$invalid && views.frmSignup.first_name.$touched">Please provide First Name</div>					
 					</div>					
-                    <div class="form-group" ng-class="{'has-error': false}">					
+                    <div class="form-group" ng-class="{'has-error': views.frmSignup.token.$invalid && views.frmSignup.token.$touched}">					
                     <label>Token:  </label>
-                    <input type="number" class="form-control">
-					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="">Please provide token</div>
+                    <input type="number" class="form-control" name="token" ng-model="judge.token" required>
+					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="views.frmSignup.token.$invalid && views.frmSignup.token.$touched">Please provide token</div>
 					</div>
-					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="">Invalid token</div>					
+					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="views.invalidToken">Invalid token</div>					
                     <hr />					
                     <a href="javascript:;" class="btn btn-info pull-right" ng-click="signUp()"><span class="glyphicon glyphicon-user"></span> &nbsp;Sign Up and Log In </a>&nbsp;
                 </div>
+			</form>
                 <div class="col-md-6">
                     <div class="alert alert-info">
                          <strong>You need an account to access the judges dashboard page</strong>
