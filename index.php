@@ -60,7 +60,7 @@ require_once 'authentication.php';
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a class="menu-top-active" href="index.php">Dashboard</a></li>
+                            <li><a class="menu-top-active" href="index.php">Judge Dashboard</a></li>
                         </ul>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ require_once 'authentication.php';
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="page-head-line">Dashboard</h4>
+                    <h4 class="page-head-line">Judge Dashboard</h4>
                 </div>
 
             </div>
@@ -90,23 +90,36 @@ require_once 'authentication.php';
                 <div class="col-md-6">
                     <div class="notice-board">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Contestant</div>
+                            <div class="panel-heading">Tabulation: <strong>{{views.contestant}}</strong>
+                                <div class="pull-right" >
+                                    <div class="dropdown">
+									  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true">
+										<span class="glyphicon glyphicon-user"></span>
+										<span class="caret"></span>
+									  </button>
+									  <ul class="dropdown-menu" role="menu">
+										<li ng-repeat="contestant in contestants" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulate(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no == 1?true:false">#{{contestant.id}}:</span>&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
+									  </ul>
+									</div>
+                                </div>							
+							</div>
 								<div class="panel-body">
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover">
 										<thead>
-											<tr><th>#</th><th>Cluster</th><th>Team Leader</th><th>Score</th><th>&nbsp;</th></tr>										
+											<tr><th>Criteria</th><th>Percentage</th><th>Score</th><th>&nbsp;</th></tr>										
 										</thead>
 										<tbody>
-											<tr ng-repeat="contestant in contestants">
-												<td>{{contestant.no}}</td>
-												<td>{{contestant.cluster_name}}</td>
-												<td>{{contestant.leader}}</td>
+											<tr ng-repeat="criterion in criteria">
+												<td>{{criterion.description}}</td>
+												<td>{{criterion.percentage}}%</td>
 												<td>
-													<input class="form-control">
+													<input class="form-control" ng-disabled="views.criteria[criterion.criteria_id]" name="score" ng-model="criterion.score">
 												</td>
 												<td>
-												
+													<button type="button" class="btn btn-default btn-sm" ng-click="score(criterion)">
+													<span ng-class="{'glyphicon': true, 'glyphicon-pencil': views.criteria[criterion.criteria_id], 'glyphicon-saved': !views.criteria[criterion.criteria_id]}" aria-hidden="true"></span>
+													</button>
 												</td>
 											</tr>
 										</tbody>
