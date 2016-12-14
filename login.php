@@ -22,7 +22,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body ng-app="signup" ng-controller="signupCtrl">
     <!-- HEADER END-->
     <div class="navbar navbar-inverse set-radius-zero">
         <div class="container">
@@ -71,19 +71,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="page-head-line">Please Sign Up To Enter </h4>
+                    <h4 class="page-head-line">Please Sign Up To Proceed </h4>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <label>Last Name: </label>
-					<input type="text" class="form-control" />
+                    <div class="form-group" ng-class="{'has-error': false}">
+					<label>Last Name: </label>
+					<input type="text" class="form-control">
+					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="">Please provide Last Name</div>
+					</div>
+                    <div class="form-group" ng-class="{'has-error': false}">					
                     <label>First Name:  </label>
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control">
+					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="">Please provide First Name</div>					
+					</div>					
+                    <div class="form-group" ng-class="{'has-error': false}">					
                     <label>Token:  </label>
-                    <input type="number" class="form-control" />					
-                    <hr />
-                    <a href="javascript:;" class="btn btn-info pull-right"><span class="glyphicon glyphicon-user"></span> &nbsp;Sign Up and Log In </a>&nbsp;
+                    <input type="number" class="form-control">
+					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="">Please provide token</div>
+					</div>
+					<div class="alert alert-danger" style="margin-top: 5px;" ng-show="">Invalid token</div>					
+                    <hr />					
+                    <a href="javascript:;" class="btn btn-info pull-right" ng-click="signUp()"><span class="glyphicon glyphicon-user"></span> &nbsp;Sign Up and Log In </a>&nbsp;
                 </div>
                 <div class="col-md-6">
                     <div class="alert alert-info">
@@ -117,7 +127,20 @@
     <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
     <!-- CORE JQUERY SCRIPTS -->
     <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/jquery.blockUI.js"></script>
+    <script src="assets/js/bootbox.min.js"></script>
+	
     <!-- BOOTSTRAP SCRIPTS  -->
     <script src="assets/js/bootstrap.js"></script>
+    <script src="bootstrap-notify-3.1.3/bootstrap-notify.min.js"></script>	
+	
+    <script src="angularjs/angular.min.js"></script>
+	<!-- modules -->
+	<script src="modules/block-ui.js"></script>
+	<script src="modules/bootstrap-modal.js"></script>
+	<script src="modules/bootstrap-notify.js"></script>
+	
+	<!-- controller -->
+	<script src="controllers/signup.js"></script>
 </body>
 </html>
