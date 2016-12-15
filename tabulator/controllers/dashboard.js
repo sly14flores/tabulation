@@ -109,7 +109,9 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 			  url: 'controllers/dashboard.php?r=winners',
 			  data: $scope.standing
 			}).then(function mySucces(response) {
-
+				
+				$scope.winners = response.data['winners'];
+				$scope.consolations = response.data['consolations'];
 			
 			}, function myError(response) {
 				

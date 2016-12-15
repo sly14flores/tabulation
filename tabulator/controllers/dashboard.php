@@ -111,28 +111,30 @@ switch ($_GET['r']) {
 	foreach ($_POST as $key => $value) {
 		
 		if ($key == 0) {
-			$winners = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"First");
+			$winners[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"First");
 		}
 		
 		if ($key == 1) {
-			$winners = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Second");
+			$winners[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Second");
 		}
 		
 		if ($key == 2) {
-			$winners = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Third");			
+			$winners[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Third");			
 		}
 		
-		if ($key > 3) {
-			$consolations = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Consolation Prize");			
+		if ($key >= 3) {
+			$consolations[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Consolation Prize");			
 		}
 		
 	}
-	var_dump($winners);
-	var_dump($consolations);
-	// $con1->insertDataMulti($winners);
-	// $con2->insertDataMulti($consolations);
+
+	$con1->insertDataMulti($winners);
+	$con2->insertDataMulti($consolations);
 	
-	echo "successful";
+	$winners = $con1->getData("SELECT (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM winners");
+	$consolations = $con2->getData("SELECT (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
+
+	echo json_encode(array("winners"=>$winners,"consolations"=>$consolations));	
 	
 	break;
 	
