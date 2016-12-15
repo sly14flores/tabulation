@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 15, 2016 at 10:19 AM
+-- Generation Time: Dec 15, 2016 at 05:05 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.4.31
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `consolation_prizes` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `contestant_id` int(10) NOT NULL,
-  `overall_score` float(10,2) NOT NULL,
+  `overall_score` float NOT NULL,
   `place` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `contestant_id` (`contestant_id`)
@@ -104,7 +104,15 @@ CREATE TABLE IF NOT EXISTS `judges` (
   `first_name` varchar(100) NOT NULL,
   `remarks` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `judges`
+--
+
+INSERT INTO `judges` (`id`, `last_name`, `first_name`, `remarks`) VALUES
+(1, 'ofiaza', 'markuz', ''),
+(2, 'Flores', 'Sly', '');
 
 -- --------------------------------------------------------
 
@@ -140,12 +148,42 @@ CREATE TABLE IF NOT EXISTS `scores` (
   `judge_id` int(10) NOT NULL,
   `contestant_id` int(10) NOT NULL,
   `criteria_id` int(10) NOT NULL,
-  `score` decimal(10,2) unsigned NOT NULL,
+  `score` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `judge_id` (`judge_id`,`criteria_id`),
   KEY `criteria_id` (`criteria_id`),
   KEY `contestant_id` (`contestant_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+
+--
+-- Dumping data for table `scores`
+--
+
+INSERT INTO `scores` (`id`, `judge_id`, `contestant_id`, `criteria_id`, `score`) VALUES
+(1, 2, 1, 1, 20),
+(2, 2, 1, 2, 15),
+(3, 2, 1, 3, 20),
+(4, 2, 1, 4, 10),
+(5, 2, 1, 5, 15),
+(6, 2, 1, 6, 10),
+(7, 1, 1, 1, 10),
+(8, 1, 1, 2, 10),
+(9, 1, 1, 3, 10),
+(10, 1, 1, 4, 10),
+(11, 1, 1, 5, 10),
+(12, 1, 1, 6, 10),
+(13, 2, 3, 1, 20),
+(14, 2, 3, 2, 20),
+(15, 2, 3, 3, 15),
+(16, 2, 3, 4, 15),
+(17, 2, 3, 5, 10),
+(18, 2, 3, 6, 5),
+(19, 1, 3, 1, 15),
+(20, 1, 3, 2, 15),
+(21, 1, 3, 3, 15),
+(22, 1, 3, 4, 15),
+(23, 1, 3, 5, 15),
+(24, 1, 3, 6, 10);
 
 -- --------------------------------------------------------
 
@@ -156,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `scores` (
 CREATE TABLE IF NOT EXISTS `winners` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `contestant_id` int(10) NOT NULL,
-  `overall_score` float(10,2) NOT NULL,
+  `overall_score` int(10) NOT NULL,
   `place` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `contestat_id` (`contestant_id`)

@@ -11,9 +11,14 @@ switch ($_GET['r']) {
 	case "startup":
 	
 	$con = new pdo_db();
-	$judges = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name FROM judges");
 	
-	echo json_encode(array("judges"=>$judges));
+	$judges = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name FROM judges");
+	$contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");		
+	
+	$winners = $con->getData("SELECT (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM winners");
+	$consolations = $con->getData("SELECT (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
+
+	echo json_encode(array("judges"=>$judges,"contestants"=>$contestants,"winners"=>$winners,"consolations"=>$consolations));
 	
 	break;	
 	
@@ -58,7 +63,7 @@ switch ($_GET['r']) {
 		
 		$score_average = $overall_score/$no_of_judges;
 		
-		$standing[] = array("no"=>$value['no'],"name"=>$value['cluster_name'],"score"=>$score_average);		
+		$standing[] = array("id"=>$value['id'],"no"=>$value['no'],"name"=>$value['cluster_name'],"score"=>$score_average);		
 		
 	}
 	
@@ -72,7 +77,64 @@ switch ($_GET['r']) {
 	
 	echo json_encode($standing);
 	
-	break;	
+	break;
+	
+	case "tabulation":
+	
+	$con = new pdo_db();
+	
+	$contestant = $con->getData("SELECT no, cluster_name FROM contestants WHERE id = $_POST[id]");
+	
+	$judges = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name FROM judges");
+	
+	foreach ($judges as $key => $judge) {
+		
+		$scores = $con->getData("SELECT (SELECT description FROM criteria WHERE id = criteria_id) description, (SELECT percentage FROM criteria WHERE id = criteria_id) percentage, score FROM scores WHERE judge_id = $judge[id] AND contestant_id = $_POST[id] ORDER BY criteria_id");
+		$total_score = $con->getData("SELECT SUM(score) total_score FROM scores WHERE judge_id = $judge[id] AND contestant_id = $_POST[id] ORDER BY criteria_id");
+		$judges[$key]['scores'] = $scores;
+		$judges[$key]['total_score'] = $total_score[0]['total_score'];
+		
+	}
+	
+	echo json_encode(array("contestant"=>$contestant[0],"judges"=>$judges));
+	
+	break;
+	
+	case "winners":
+
+	$con1 = new pdo_db("winners");
+	$con2 = new pdo_db("consolation_prizes");
+	
+	$winners = [];
+	$consolations = [];
+	
+	foreach ($_POST as $key => $value) {
+		
+		if ($key == 0) {
+			$winners = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"First");
+		}
+		
+		if ($key == 1) {
+			$winners = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Second");
+		}
+		
+		if ($key == 2) {
+			$winners = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Third");			
+		}
+		
+		if ($key > 3) {
+			$consolations = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Consolation Prize");			
+		}
+		
+	}
+	var_dump($winners);
+	var_dump($consolations);
+	// $con1->insertDataMulti($winners);
+	// $con2->insertDataMulti($consolations);
+	
+	echo "successful";
+	
+	break;
 	
 }
 
