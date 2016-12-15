@@ -38,7 +38,8 @@ switch ($_GET['r']) {
 
  		foreach ($contestant_scores as $key1 => $value1) {
 
-			$score += ($value1['score']*$value1['percentage'])/100;			
+			// $score += ($value1['score']*$value1['percentage'])/100;			
+			$score += $value1['score'];			
 			
 		}
 		
