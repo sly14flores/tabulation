@@ -121,4 +121,16 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 
 	};
 	
+	$scope.printWinners = function() {
+		
+		window.open("reports/winners.php");
+		
+	};
+	
+	$scope.printConsolations = function() {
+
+		window.open("reports/consolation-prizes.php");	
+	
+	};
+
 });	

@@ -121,7 +121,7 @@
 									<span class="caret"></span>
 								  </button>
 								  <ul class="dropdown-menu" role="menu">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="">Print</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="printWinners()">Print</a></li>
 								  </ul>
 								</div>
 							</div>							
@@ -129,10 +129,11 @@
 						<div class="panel-body">
 							<table class="table table-striped table-bordered table-hover">
 								<thead>
-									<tr><th>Cluster Name</th><th>Score</th><th>Place</th></tr>										
+									<tr><th>No</th><th>Cluster Name</th><th>Score</th><th>Place</th></tr>										
 								</thead>
 								<tbody>
 									<tr ng-repeat="winner in winners">
+										<td>{{winner.no}}</td>
 										<td>{{winner.name}}</td>
 										<td>{{winner.overall_score}}</td>
 										<td>{{winner.place}}</td>
@@ -151,7 +152,7 @@
 									<span class="caret"></span>
 								  </button>
 								  <ul class="dropdown-menu" role="menu">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="">Print</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="printConsolations()">Print</a></li>
 								  </ul>
 								</div>
 							</div>							
@@ -159,13 +160,13 @@
 						<div class="panel-body">
 							<table class="table table-striped table-bordered table-hover">
 								<thead>
-									<tr><th>Cluster Name</th><th>Score</th><th>Place</th></tr>										
+									<tr><th>No</th><th>Cluster Name</th><th>Score</th></tr>										
 								</thead>
 								<tbody>
 									<tr ng-repeat="consolation in consolations">
+										<td>{{consolation.no}}</td>
 										<td>{{consolation.name}}</td>
 										<td>{{consolation.overall_score}}</td>
-										<td>{{consolation.place}}</td>
 									</tr>
 								</tbody>									
 							</table>

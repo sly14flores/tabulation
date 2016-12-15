@@ -15,8 +15,8 @@ switch ($_GET['r']) {
 	$judges = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name FROM judges");
 	$contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");		
 	
-	$winners = $con->getData("SELECT (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM winners");
-	$consolations = $con->getData("SELECT (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
+	$winners = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM winners");
+	$consolations = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
 
 	echo json_encode(array("judges"=>$judges,"contestants"=>$contestants,"winners"=>$winners,"consolations"=>$consolations));
 	
@@ -127,12 +127,17 @@ switch ($_GET['r']) {
 		}
 		
 	}
-
+	
+	$con1->db->exec("DELETE FROM winners");
+	sleep(1);
 	$con1->insertDataMulti($winners);
+	$con2->db->exec("DELETE FROM consolation_prizes");
+	sleep(1);
 	$con2->insertDataMulti($consolations);
 	
-	$winners = $con1->getData("SELECT (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM winners");
-	$consolations = $con2->getData("SELECT (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
+	sleep(1);
+	$winners = $con1->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM winners");
+	$consolations = $con2->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
 
 	echo json_encode(array("winners"=>$winners,"consolations"=>$consolations));	
 	
