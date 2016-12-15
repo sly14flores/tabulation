@@ -73,16 +73,46 @@
 
             </div>
             <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-success">
-                        Welcome, <strong>{{views.judge}}</strong>
-                    </div>
-                </div>
-
-            </div>
-      
-            <div class="row">
                 <div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">Standing: <strong>{{views.filter}}</strong>
+							<div class="pull-right" >
+								<div class="dropdown">
+								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true">
+									<span class="glyphicon glyphicon-user"></span>
+									<span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" role="menu">
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="loadStanding({id: 0, name: 'Overall'})">Overall</a></li>
+									<li ng-repeat="judge in judges" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="loadStanding(judge)">{{judge.name}}</a></li>
+								  </ul>
+								</div>
+							</div>						
+						</div>
+						<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr><th>#</th><th>Contestant</th><th>Score</th><th>Rank</th></tr>										
+								</thead>
+								<tbody>
+									<tr ng-repeat="contestant in standing">
+										<td>{{contestant.no}}</td>
+										<td>{{contestant.name}}</td>
+										<td>{{contestant.score}}</td>
+										<td>{{$index+1}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="panel-footer">
+							<!--<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>-->
+						</div>
+						</div>
+					</div>					
+                </div>			
+                <div class="col-md-6">
+					<!--
 					<div class="panel panel-default">
 						<div class="panel-heading">Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong>
 							<div class="pull-right" >
@@ -124,32 +154,8 @@
 						</div>
 						</div>
 					</div>
+					-->
                     <hr />
-                </div>
-                <div class="col-md-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">Standing</div>
-						<div class="panel-body">
-						<div class="table-responsive">
-							<table class="table table-striped table-bordered table-hover">
-								<thead>
-									<tr><th>#</th><th>Contestant</th><th>Score</th><th>Rank</th></tr>										
-								</thead>
-								<tbody>
-									<tr ng-repeat="contestant in standing">
-										<td>{{contestant.no}}</td>
-										<td>{{contestant.name}}</td>
-										<td>{{contestant.score}}</td>
-										<td>{{$index+1}}</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="panel-footer">
-							<!--<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>-->
-						</div>
-						</div>
-					</div>					
                 </div>
             </div>
         </div>

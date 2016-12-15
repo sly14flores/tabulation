@@ -97,7 +97,7 @@ require_once 'authentication.php';
 									<span class="caret"></span>
 								  </button>
 								  <ul class="dropdown-menu" role="menu">
-									<li ng-repeat="contestant in contestants" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulate(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.id}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
+									<li ng-repeat="contestant in contestants" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulate(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.no}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
 								  </ul>
 								</div>
 							</div>							
@@ -111,7 +111,7 @@ require_once 'authentication.php';
 								<tbody>
 									<tr ng-repeat="criterion in criteria">
 										<td>{{criterion.description}}</td>
-										<td>{{criterion.percentage}}%</td>
+										<td>{{criterion.percentage}}</td>
 										<td>
 											<input type="text" class="form-control" ng-disabled="views.criteria[criterion.criteria_id]" name="score" ng-model="criterion.score">
 										</td>
