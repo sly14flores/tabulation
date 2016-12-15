@@ -40,7 +40,13 @@ class pdo_db {
 		$this->rows = $stmt->rowCount();
 		return $results;
 
-	}	
+	}
+
+	function query($sql) {
+		
+		$this->db->query($sql);
+		
+	}
 
 	function auto_increment_one() {
 		

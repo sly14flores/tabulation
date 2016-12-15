@@ -88,54 +88,73 @@ require_once 'authentication.php';
       
             <div class="row">
                 <div class="col-md-6">
-                    <div class="notice-board">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Tabulation: <strong>{{views.contestant}}</strong>
-                                <div class="pull-right" >
-                                    <div class="dropdown">
-									  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true">
-										<span class="glyphicon glyphicon-user"></span>
-										<span class="caret"></span>
-									  </button>
-									  <ul class="dropdown-menu" role="menu">
-										<li ng-repeat="contestant in contestants" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulate(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no == 1?true:false">#{{contestant.id}}:</span>&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
-									  </ul>
-									</div>
-                                </div>							
-							</div>
-								<div class="panel-body">
-								<div class="table-responsive">
-									<table class="table table-striped table-bordered table-hover">
-										<thead>
-											<tr><th>Criteria</th><th>Percentage</th><th>Score</th><th>&nbsp;</th></tr>										
-										</thead>
-										<tbody>
-											<tr ng-repeat="criterion in criteria">
-												<td>{{criterion.description}}</td>
-												<td>{{criterion.percentage}}%</td>
-												<td>
-													<input class="form-control" ng-disabled="views.criteria[criterion.criteria_id]" name="score" ng-model="criterion.score">
-												</td>
-												<td>
-													<button type="button" class="btn btn-default btn-sm" ng-click="score(criterion)">
-													<span ng-class="{'glyphicon': true, 'glyphicon-pencil': views.criteria[criterion.criteria_id], 'glyphicon-saved': !views.criteria[criterion.criteria_id]}" aria-hidden="true"></span>
-													</button>
-												</td>
-											</tr>
-										</tbody>
-									</table>
+					<div class="panel panel-default">
+						<div class="panel-heading">Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong>
+							<div class="pull-right" >
+								<div class="dropdown">
+								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true">
+									<span class="glyphicon glyphicon-user"></span>
+									<span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" role="menu">
+									<li ng-repeat="contestant in contestants" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulate(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.id}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
+								  </ul>
 								</div>
-								<div class="panel-footer">
-									<!--<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>-->
-								</div>
-								</div>
-                        </div>
-                    </div>
+							</div>							
+						</div>
+						<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr><th>Criteria</th><th>Percentage</th><th>Score</th><th>&nbsp;</th></tr>										
+								</thead>
+								<tbody>
+									<tr ng-repeat="criterion in criteria">
+										<td>{{criterion.description}}</td>
+										<td>{{criterion.percentage}}%</td>
+										<td>
+											<input type="text" class="form-control" ng-disabled="views.criteria[criterion.criteria_id]" name="score" ng-model="criterion.score">
+										</td>
+										<td>
+											<button type="button" class="btn btn-default btn-sm" ng-click="score(criterion)">
+											<span ng-class="{'glyphicon': true, 'glyphicon-pencil': views.criteria[criterion.criteria_id], 'glyphicon-saved': !views.criteria[criterion.criteria_id]}" aria-hidden="true"></span>
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="panel-footer">
+							<!--<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>-->
+						</div>
+						</div>
+					</div>
                     <hr />
-
                 </div>
                 <div class="col-md-6">
-
+					<div class="panel panel-default">
+						<div class="panel-heading">Standing</div>
+						<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr><th>#</th><th>Contestant</th><th>Score</th><th>Rank</th></tr>										
+								</thead>
+								<tbody>
+									<tr ng-repeat="contestant in standing">
+										<td>{{contestant.no}}</td>
+										<td>{{contestant.name}}</td>
+										<td>{{contestant.score}}</td>
+										<td>{{$index+1}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="panel-footer">
+							<!--<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>-->
+						</div>
+						</div>
+					</div>					
                 </div>
             </div>
         </div>

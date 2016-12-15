@@ -19,6 +19,45 @@ switch ($_GET['r']) {
 	
 	break;
 
+	case "standing":
+	
+	$con = new pdo_db();	
+
+	$contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
+	
+	$standing = [];
+	foreach ($contestants as $key => $value) {
+		
+		/*
+		** score computation
+		*/
+
+		$score = 0;
+		$sql = "SELECT *, (SELECT percentage FROM criteria WHERE id = criteria_id) percentage FROM scores WHERE contestant_id = $value[id] AND judge_id = $_SESSION[judge_id]";
+		$contestant_scores = $con->getData($sql);
+
+ 		foreach ($contestant_scores as $key1 => $value1) {
+
+			$score += ($value1['score']*$value1['percentage'])/100;			
+			
+		}
+		
+		$standing[] = array("no"=>$value['no'],"name"=>$value['cluster_name'],"score"=>$score);
+		
+	}
+	
+	foreach ($standing as $key2 => $value2) {
+		
+		$rank[] = $standing[$key2]['score'];
+		
+	}
+
+	array_multisort($rank, SORT_DESC, $standing);	
+	
+	echo json_encode($standing);
+	
+	break;
+	
 	case "tabulate":
 
 	$con1 = new pdo_db("criteria");
@@ -33,19 +72,21 @@ switch ($_GET['r']) {
 		}
 	}
 	
-	$contestant = $con2->getData("SELECT cluster_name FROM contestants WHERE id = $_POST[id]");
+	$contestant = $con2->getData("SELECT no, cluster_name FROM contestants WHERE id = $_POST[id]");
 	
 	$contestant_criteria = $con2->getData("SELECT id, contestant_id, criteria_id, (SELECT description FROM criteria WHERE id = criteria_id) description, (SELECT percentage FROM criteria WHERE id = criteria_id) percentage, score FROM scores WHERE judge_id = $_SESSION[judge_id] AND contestant_id = $_POST[id]");
 	
-	echo json_encode(array("contestant"=>$contestant[0]['cluster_name'],"criteria"=>$contestant_criteria));
+	echo json_encode(array("no"=>$contestant[0]['no'],"contestant"=>$contestant[0]['cluster_name'],"criteria"=>$contestant_criteria));
 	
 	break;
 	
 	case "save":
 	
 	$con = new pdo_db("scores");
+
+	if ($_POST['score'] == "") $_POST['score'] = 0;
 	
-	$score = $con->updateData($_POST,'id');
+	$score = $con->query("UPDATE scores SET score = $_POST[score] WHERE id = $_POST[id]");
 	
 	break;
 	
