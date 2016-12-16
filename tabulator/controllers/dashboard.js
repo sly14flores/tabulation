@@ -18,6 +18,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		$scope.judges = response.data['judges'];
 		$scope.contestants = response.data['contestants'];
 		$scope.contestants_list = response.data['contestants_list'];
+		$scope.judges_list = response.data['judges_list'];
 		$scope.winners = response.data['winners'];
 		$scope.consolations = response.data['consolations'];
 		
@@ -174,7 +175,52 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 			
 		}
 		
-	}
+	};
+	
+	$scope.editJudge = function(id) {
+		
+		$scope.judge_status = {};
+		
+		$scope.judge_status.remarks = "";
+		
+		var frm = '<form>';
+			frm += '<div class="form-group">';
+			frm += '<label>No</label>';
+			frm += '<input class="form-control" name="remarks" ng-model="judge_status.remarks" type="text">';
+			frm += '</div>';			
+			frm += '</form>';
+			
+		bootstrapModal.confirm($scope,'Judge',frm,function() { judgeStatus();  },function() {});		
+			
+		$http({
+		  method: 'POST',
+		  url: 'controllers/dashboard.php?r=judge_status',
+		  data: {id: id}
+		}).then(function mySucces(response) {
+			
+			$timeout(function() { $scope.judge_status.remarks = response.data; },500);
+		
+		}, function myError(response) {
+			
+		});		
+		
+		function judgeStatus() {
+			
+			$http({
+			  method: 'POST',
+			  url: 'controllers/dashboard.php?r=judge',
+			  data: {id: id, remarks: $scope.judge_status.remarks}
+			}).then(function mySucces(response) {
+				
+		$scope.judges_list = response.data['judges_list'];
+			
+			}, function myError(response) {
+				
+			});				
+			
+		}
+		
+	};	
 	
 	$scope.printWinners = function() {
 		

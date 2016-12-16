@@ -73,8 +73,7 @@
 
             </div>
             <div class="row">
-                <div class="col-md-6">
-				
+                <div class="col-md-6">				
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<strong>Contestants</strong>							
@@ -99,7 +98,6 @@
 							</table>
 						</div>							
 					</div>				
-				
 					<div class="panel panel-default">
 						<div class="panel-heading">Standing: <strong>{{views.filter}}</strong>
 							<div class="pull-right" >
@@ -200,6 +198,31 @@
 					</div>					
                 </div>			
                 <div class="col-md-6">
+				
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<strong>Judges</strong>							
+						</div>
+						<div class="panel-body">
+							<table class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr><th>Name</th><th>Remarks</th><th>&nbsp;</th></tr>										
+								</thead>
+								<tbody>
+									<tr ng-repeat="judge in judges_list">
+										<td>{{judge.name}}</td>
+										<td>{{judge.remarks}}</td>
+										<td>
+											<button type="button" class="btn btn-default btn-sm" ng-click="editJudge(judge.id)">
+												<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+											</button>										
+										</td>
+									</tr>
+								</tbody>									
+							</table>
+						</div>							
+					</div>				
+				
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<div class="pull-left" >

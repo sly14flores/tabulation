@@ -19,8 +19,9 @@ switch ($_GET['r']) {
 	$consolations = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
 
 	$contestants_list = $con->getData("SELECT id, IF(no=0,'',no) cn, cluster_name, IF(is_active=1,'Yes','No') participated FROM contestants");	
+	$judges_list = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name, remarks FROM judges");	
 
-	echo json_encode(array("judges"=>$judges,"contestants"=>$contestants,"winners"=>$winners,"consolations"=>$consolations,"contestants_list"=>$contestants_list));
+	echo json_encode(array("judges"=>$judges,"contestants"=>$contestants,"winners"=>$winners,"consolations"=>$consolations,"contestants_list"=>$contestants_list,"judges_list"=>$judges_list));
 	
 	break;	
 	
@@ -164,6 +165,28 @@ switch ($_GET['r']) {
 	$contestants_list = $con->getData("SELECT id, IF(no=0,'',no) cn, cluster_name, IF(is_active=1,'Yes','No') participated FROM contestants");	
 
 	echo json_encode(array("contestants_list"=>$contestants_list));	
+	
+	break;
+	
+	case "judge_status":
+	
+	$con = new pdo_db("judges");
+	
+	$judge_status = $con->getData("SELECT remarks FROM judges WHERE id = $_POST[id]");
+	
+	echo $judge_status[0]['remarks'];
+	
+	break;
+	
+	case "judge":
+	
+	$con = new pdo_db("judges");	
+	
+	$judge = $con->updateData($_POST,'id');	
+	
+	$judges_list = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name, remarks FROM judges");	
+
+	echo json_encode(array("judges_list"=>$judges_list));	
 	
 	break;
 	
