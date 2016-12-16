@@ -17,6 +17,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 
 		$scope.judges = response.data['judges'];
 		$scope.contestants = response.data['contestants'];
+		$scope.contestants_list = response.data['contestants_list'];
 		$scope.winners = response.data['winners'];
 		$scope.consolations = response.data['consolations'];
 		
@@ -120,6 +121,60 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		};
 
 	};
+	
+	$scope.editContestant = function(id) {
+		
+		$scope.contestant_status = {};
+		
+		$scope.views.contestant_status = {
+			"No": 0,
+			"Yes": 1
+		};
+		
+		var frm = '<form>';
+			frm += '<div class="form-group">';
+			frm += '<label>No</label>';
+			frm += '<input class="form-control" name="no" ng-model="contestant_status.no" type="number">';
+			frm += '</div>';
+			frm += '<div class="form-group">';
+			frm += '<label>Participated</label>';
+			frm += '<select class="form-control" name="participated" ng-model="contestant_status.participated" ng-options="x for (x,y) in views.contestant_status track by y">';
+			frm += '<option value="">-</option>';
+			frm += '</select>';
+			frm += '</div>';			
+			frm += '</form>';
+			
+		bootstrapModal.confirm($scope,'Contestant',frm,function() { contestantStatus();  },function() {});		
+			
+		$http({
+		  method: 'POST',
+		  url: 'controllers/dashboard.php?r=contestant_status',
+		  data: {id: id}
+		}).then(function mySucces(response) {
+			
+			$timeout(function() { $scope.contestant_status = response.data; },500);
+		
+		}, function myError(response) {
+			
+		});		
+		
+		function contestantStatus() {
+			
+			$http({
+			  method: 'POST',
+			  url: 'controllers/dashboard.php?r=contestant',
+			  data: {id: id, no: $scope.contestant_status.no, is_active: $scope.contestant_status.participated}
+			}).then(function mySucces(response) {
+				
+				$scope.contestants_list = response.data['contestants_list'];
+			
+			}, function myError(response) {
+				
+			});				
+			
+		}
+		
+	}
 	
 	$scope.printWinners = function() {
 		

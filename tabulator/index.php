@@ -74,6 +74,32 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
+				
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<strong>Contestants</strong>							
+						</div>
+						<div class="panel-body">
+							<table class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr><th>No</th><th>Cluster Name</th><th>Participated</th><th>&nbsp;</th></tr>										
+								</thead>
+								<tbody>
+									<tr ng-repeat="contestant in contestants_list">
+										<td>{{contestant.cn}}</td>
+										<td>{{contestant.cluster_name}}</td>
+										<td>{{contestant.participated}}</td>
+										<td>
+											<button type="button" class="btn btn-default btn-sm" ng-click="editContestant(contestant.id)">
+												<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+											</button>										
+										</td>
+									</tr>
+								</tbody>									
+							</table>
+						</div>							
+					</div>				
+				
 					<div class="panel panel-default">
 						<div class="panel-heading">Standing: <strong>{{views.filter}}</strong>
 							<div class="pull-right" >

@@ -141,12 +141,12 @@ class pdo_db {
 				continue;
 			}
 			
-			if ($value == "CURRENT_TIMESTAMP") {
-				$prepare .= $key."=CURRENT_TIMESTAMP,";
-				continue;
-			} else {
+			// if ($value == "CURRENT_TIMESTAMP") {
+				// $prepare .= $key."=CURRENT_TIMESTAMP,";
+				// continue;
+			// } else {
 				$prepare .= $key."=?,";
-			}
+			// }
 			$insert[] = $value;	
 		}
 		

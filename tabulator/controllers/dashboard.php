@@ -18,7 +18,9 @@ switch ($_GET['r']) {
 	$winners = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM winners");
 	$consolations = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
 
-	echo json_encode(array("judges"=>$judges,"contestants"=>$contestants,"winners"=>$winners,"consolations"=>$consolations));
+	$contestants_list = $con->getData("SELECT id, IF(no=0,'',no) cn, cluster_name, IF(is_active=1,'Yes','No') participated FROM contestants");	
+
+	echo json_encode(array("judges"=>$judges,"contestants"=>$contestants,"winners"=>$winners,"consolations"=>$consolations,"contestants_list"=>$contestants_list));
 	
 	break;	
 	
@@ -140,6 +142,28 @@ switch ($_GET['r']) {
 	$consolations = $con2->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
 
 	echo json_encode(array("winners"=>$winners,"consolations"=>$consolations));	
+	
+	break;
+	
+	case "contestant_status":
+
+	$con = new pdo_db("contestants");
+
+	$contestant_status = $con->getData("SELECT no, is_active participated FROM contestants WHERE id = $_POST[id]");
+	
+	echo json_encode($contestant_status[0]);
+	
+	break;
+	
+	case "contestant":
+	
+	$con = new pdo_db("contestants");
+	
+	$contestant = $con->updateData($_POST,'id');
+	
+	$contestants_list = $con->getData("SELECT id, IF(no=0,'',no) cn, cluster_name, IF(is_active=1,'Yes','No') participated FROM contestants");	
+
+	echo json_encode(array("contestants_list"=>$contestants_list));	
 	
 	break;
 	
