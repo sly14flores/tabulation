@@ -1,4 +1,4 @@
-﻿<?php
+﻿ <?php
 
 require_once 'authentication.php';
 
@@ -113,7 +113,7 @@ require_once 'authentication.php';
 										<td>{{criterion.description}}</td>
 										<td>{{criterion.percentage}}</td>
 										<td>
-											<input type="text" class="form-control" ng-disabled="views.criteria[criterion.criteria_id]" name="score" ng-model="criterion.score">
+											<input type="number" class="form-control" ng-disabled="views.criteria[criterion.criteria_id]" name="score" ng-model="criterion.score" min="1" max="{{criterion.percentage}}">
 										</td>
 										<td>
 											<button type="button" class="btn btn-default btn-sm" ng-click="score(criterion)">

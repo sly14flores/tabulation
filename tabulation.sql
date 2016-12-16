@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 16, 2016 at 10:02 AM
+-- Generation Time: Dec 16, 2016 at 11:49 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.4.31
 
@@ -35,17 +35,6 @@ CREATE TABLE IF NOT EXISTS `consolation_prizes` (
   UNIQUE KEY `contestant_id` (`contestant_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
---
--- Dumping data for table `consolation_prizes`
---
-
-INSERT INTO `consolation_prizes` (`id`, `contestant_id`, `overall_score`, `place`) VALUES
-(1, 6, '0.00', 'Consolation Prize'),
-(2, 7, '0.00', 'Consolation Prize'),
-(3, 8, '0.00', 'Consolation Prize'),
-(4, 9, '0.00', 'Consolation Prize'),
-(5, 10, '0.00', 'Consolation Prize');
-
 -- --------------------------------------------------------
 
 --
@@ -67,16 +56,16 @@ CREATE TABLE IF NOT EXISTS `contestants` (
 --
 
 INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `remarks`, `is_active`) VALUES
-(1, 1, 'ACCTG, BUDGET, PTO, LEGAL', 'FRENZILYN MAMARIL', '', 1),
+(1, 0, 'ACCTG, BUDGET, PTO, LEGAL', 'FRENZILYN MAMARIL', '', 1),
 (2, 0, 'CMCH, RDH', 'LORENZO ORTEGA', '', 0),
-(3, 2, 'OPAG, OPVET & PSWDO', 'JOHN RAY DIAZ', '', 1),
-(4, 3, 'SP', 'JANE FLORES', '', 1),
+(3, 0, 'OPAG, OPVET & PSWDO', 'JOHN RAY DIAZ', '', 1),
+(4, 0, 'SP', 'JANE FLORES', '', 1),
 (5, 0, 'PITO, ASSESSOR, PPO', 'ARTHUR CORTEZ', '', 0),
-(6, 4, 'BDH, BALDH', 'MARK PARCHAMENTO', '', 1),
-(7, 5, 'LUMC', 'ARIANE AMPARO', '', 1),
-(8, 6, 'PHO, NDH', '', '', 1),
-(9, 7, 'OPG (All Divisions)', 'Aizel Trisha Joyce Villaremo', '', 1),
-(10, 8, 'PGSO, PPDC & PEO', 'DONG ALCANTARA', '', 1);
+(6, 0, 'BDH, BALDH', 'MARK PARCHAMENTO', '', 1),
+(7, 0, 'LUMC', 'ARIANE AMPARO', '', 1),
+(8, 0, 'PHO, NDH', '', '', 1),
+(9, 0, 'OPG (All Divisions)', 'Aizel Trisha Joyce Villaremo', '', 1),
+(10, 0, 'PGSO, PPDC & PEO', 'DONG ALCANTARA', '', 1);
 
 -- --------------------------------------------------------
 
@@ -115,15 +104,14 @@ CREATE TABLE IF NOT EXISTS `judges` (
   `first_name` varchar(100) NOT NULL,
   `remarks` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `judges`
 --
 
 INSERT INTO `judges` (`id`, `last_name`, `first_name`, `remarks`) VALUES
-(1, 'ofiaza', 'markuz', ''),
-(2, 'Flores', 'Sly', '');
+(1, 'Flores', 'Sly', '');
 
 -- --------------------------------------------------------
 
@@ -164,37 +152,7 @@ CREATE TABLE IF NOT EXISTS `scores` (
   KEY `judge_id` (`judge_id`,`criteria_id`),
   KEY `criteria_id` (`criteria_id`),
   KEY `contestant_id` (`contestant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
-
---
--- Dumping data for table `scores`
---
-
-INSERT INTO `scores` (`id`, `judge_id`, `contestant_id`, `criteria_id`, `score`) VALUES
-(1, 2, 1, 1, 20),
-(2, 2, 1, 2, 20),
-(3, 2, 1, 3, 20),
-(4, 2, 1, 4, 10),
-(5, 2, 1, 5, 15),
-(6, 2, 1, 6, 10),
-(7, 1, 1, 1, 10),
-(8, 1, 1, 2, 10),
-(9, 1, 1, 3, 10),
-(10, 1, 1, 4, 10),
-(11, 1, 1, 5, 10),
-(12, 1, 1, 6, 10),
-(13, 2, 3, 1, 20),
-(14, 2, 3, 2, 20),
-(15, 2, 3, 3, 15),
-(16, 2, 3, 4, 15),
-(17, 2, 3, 5, 10),
-(18, 2, 3, 6, 5),
-(19, 1, 3, 1, 15),
-(20, 1, 3, 2, 15),
-(21, 1, 3, 3, 15),
-(22, 1, 3, 4, 15),
-(23, 1, 3, 5, 15),
-(24, 1, 3, 6, 10);
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 -- --------------------------------------------------------
 
@@ -210,15 +168,6 @@ CREATE TABLE IF NOT EXISTS `winners` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `contestat_id` (`contestant_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `winners`
---
-
-INSERT INTO `winners` (`id`, `contestant_id`, `overall_score`, `place`) VALUES
-(1, 3, '85.00', 'First'),
-(2, 1, '77.50', 'Second'),
-(3, 4, '0.00', 'Third');
 
 --
 -- Constraints for dumped tables
