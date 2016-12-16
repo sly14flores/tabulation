@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 15, 2016 at 05:05 PM
+-- Generation Time: Dec 16, 2016 at 10:02 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.4.31
 
@@ -29,11 +29,22 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `consolation_prizes` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `contestant_id` int(10) NOT NULL,
-  `overall_score` float NOT NULL,
-  `place` varchar(50) NOT NULL,
+  `overall_score` decimal(10,2) NOT NULL,
+  `place` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `contestant_id` (`contestant_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `consolation_prizes`
+--
+
+INSERT INTO `consolation_prizes` (`id`, `contestant_id`, `overall_score`, `place`) VALUES
+(1, 6, '0.00', 'Consolation Prize'),
+(2, 7, '0.00', 'Consolation Prize'),
+(3, 8, '0.00', 'Consolation Prize'),
+(4, 9, '0.00', 'Consolation Prize'),
+(5, 10, '0.00', 'Consolation Prize');
 
 -- --------------------------------------------------------
 
@@ -161,7 +172,7 @@ CREATE TABLE IF NOT EXISTS `scores` (
 
 INSERT INTO `scores` (`id`, `judge_id`, `contestant_id`, `criteria_id`, `score`) VALUES
 (1, 2, 1, 1, 20),
-(2, 2, 1, 2, 15),
+(2, 2, 1, 2, 20),
 (3, 2, 1, 3, 20),
 (4, 2, 1, 4, 10),
 (5, 2, 1, 5, 15),
@@ -194,11 +205,20 @@ INSERT INTO `scores` (`id`, `judge_id`, `contestant_id`, `criteria_id`, `score`)
 CREATE TABLE IF NOT EXISTS `winners` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `contestant_id` int(10) NOT NULL,
-  `overall_score` int(10) NOT NULL,
-  `place` varchar(50) NOT NULL,
+  `overall_score` decimal(10,2) NOT NULL,
+  `place` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `contestat_id` (`contestant_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `winners`
+--
+
+INSERT INTO `winners` (`id`, `contestant_id`, `overall_score`, `place`) VALUES
+(1, 3, '85.00', 'First'),
+(2, 1, '77.50', 'Second'),
+(3, 4, '0.00', 'Third');
 
 --
 -- Constraints for dumped tables
