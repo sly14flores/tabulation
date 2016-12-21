@@ -40,14 +40,14 @@ class pdo_db {
 		$this->rows = $stmt->rowCount();
 		return $results;
 
-	}
+	}	
 
 	function query($sql) {
 		
-		$this->db->query($sql);
+		return $this->db->query($sql);
 		
-	}
-
+	}	
+	
 	function auto_increment_one() {
 		
 		$this->sql = "ALTER TABLE " . $this->table . " AUTO_INCREMENT = 1";
@@ -55,7 +55,7 @@ class pdo_db {
 		
 	}
 	
-	function insertData($data) {	
+	function insertData($data) {		
 		
 		$this->auto_increment_one();
 		
@@ -79,9 +79,11 @@ class pdo_db {
 		$this->prepare .= $prepare;
 		
 		$stmt = $this->db->prepare($this->prepare);
-		$stmt->execute($insert);
+		$e = $stmt->execute($insert);
 		$this->insertId = $this->db->lastInsertId();
 
+		return $e;
+		
 	}
 	
 	function insertDataMulti($data) {
@@ -95,19 +97,21 @@ class pdo_db {
 		foreach ($data as $row) { // construct Prepared Statement
 			foreach ($row as $key => $value) {
 				$this->prepare .= $key . ",";
-				$prepare .= ":$key,";
+				if ($value == 'CURRENT_TIMESTAMP') $prepare .= "$value,";
+				else $prepare .= ":$key,";
+				if ($value == 'CURRENT_TIMESTAMP') continue;
 			}
 			break;
 		}
 
 		foreach ($data as $row) { // strip item with CURRENT_TIMESTAMP value
-
-			$insert = [];
-/* 			foreach ($row as $key => $value) {
+		
+			$insert = [];		
+			foreach ($row as $key => $value) {
 				if ($value == 'CURRENT_TIMESTAMP') continue;
 				$insert[$key] = $value;
-			} */
-			$inserts[] = $row;
+			}
+			$inserts[] = $insert;
 			
 		}
 
@@ -117,13 +121,22 @@ class pdo_db {
 		$this->prepare = substr($this->prepare,0,strlen($this->prepare)-1);
 		$this->prepare .= ") ";
 		$this->prepare .= $prepare;
-
+		
+		$Qs = [];
 		$this->db->beginTransaction();
 		foreach ($inserts as $insert) {
 			$stmt = $this->db->prepare($this->prepare);
-			$stmt->execute($insert);
+			$Qs[] = $stmt->execute($insert);
 		}	 
-		$this->db->commit();
+		$Qs[] = $this->db->commit();
+		
+		$q = false;
+		foreach ($Qs as $value) {
+			$q = $value;
+			if (!$q) break;
+		}
+		
+		return $q;
 
 	}
 	
@@ -141,13 +154,15 @@ class pdo_db {
 				continue;
 			}
 			
-			// if ($value == "CURRENT_TIMESTAMP") {
-				// $prepare .= $key."=CURRENT_TIMESTAMP,";
-				// continue;
-			// } else {
+			if ($value === "CURRENT_TIMESTAMP") {
+				$prepare .= $key."=CURRENT_TIMESTAMP,";
+				continue;
+			} else {
 				$prepare .= $key."=?,";
-			// }
-			$insert[] = $value;	
+			}
+						
+			$insert[] = $value;
+
 		}
 		
 		$prepare = substr($prepare,0,strlen($prepare)-1);
@@ -155,9 +170,11 @@ class pdo_db {
 		$this->prepare .= $prepare;
 		$this->prepare .= " WHERE $pk=?";
 		$insert[] = $pk_value;
-		
+
 		$stmt = $this->db->prepare($this->prepare);
-		$stmt->execute($insert);		
+		$q = $stmt->execute($insert);
+		
+		return $q;
 		
 	}
 	
@@ -176,7 +193,7 @@ class pdo_db {
 					continue;
 				}
 				
-				if ($value == "CURRENT_TIMESTAMP") {
+				if ($value === "CURRENT_TIMESTAMP") {
 					$prepare .= $key."=CURRENT_TIMESTAMP,";
 					continue;
 				} else {
@@ -189,7 +206,7 @@ class pdo_db {
 		
 		$prepare = substr($prepare,0,strlen($prepare)-1);		
 		$this->prepare .= $prepare;
-		$this->prepare .= " WHERE $pk=?"; print_r($this->prepare);
+		$this->prepare .= " WHERE $pk=?";
 
 		foreach ($data as $row) {
 			
@@ -206,23 +223,34 @@ class pdo_db {
 			$updates[] = $update;
 			
 		}
-
+		
+		$Qs = [];
 		$this->db->beginTransaction();		 
 		foreach ($updates as $update) {
 			$stmt = $this->db->prepare($this->prepare);
-			$stmt->execute($update);
+			$Qs[] = $stmt->execute($update);
 		}		 
-		$this->db->commit();		
+		$Qs[] = $this->db->commit();
 		
+		$q = false;
+		foreach ($Qs as $value) {
+			$q = $value;
+			if (!$q) break;
+		}
+		
+		return $q;
+
 	}
 	
 	function deleteData($data) {
-		
+
 		$qMarks = str_repeat('?,', count(explode(",",array_values($data)[0])) - 1) . '?';
 		$prepare = "DELETE FROM ".$this->table." WHERE ".array_keys($data)[0]." IN ($qMarks)";
 		$insert = explode(",",array_values($data)[0]);
 		$stmt = $this->db->prepare($prepare);
-		$stmt->execute($insert);
+		$q = $stmt->execute($insert);
+
+		return $q;
 
 	}
 
