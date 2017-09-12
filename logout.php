@@ -7,6 +7,6 @@ if (isset($_SESSION['judge_name'])) unset($_SESSION['judge_name']);
 
 echo "Logout Successful";
 
-header("location: index.php");
+header("location: back/index.php");
 
 ?>
