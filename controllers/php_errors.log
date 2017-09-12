@@ -1,0 +1,6 @@
+[12-Sep-2017 15:45:53 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:31
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(31): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\signup.php(13): pdo_db->__construct()
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 31
