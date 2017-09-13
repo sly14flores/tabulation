@@ -4,6 +4,12 @@ session_start();
 
 if (isset($_SESSION['judge_id'])) header("location: index.php");
 
+require_once 'db.php';
+
+$con = new pdo_db();
+
+$_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,7 +21,7 @@ if (isset($_SESSION['judge_id'])) header("location: index.php");
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Judge Registration - Sayaw-Awit Competition | Tabulation System</title>
+    <title><?php echo $_SESSION['preferences']['title']; ?> - Judge Registration | Tabulation System</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME ICONS  -->
@@ -75,7 +81,12 @@ if (isset($_SESSION['judge_id'])) header("location: index.php");
     </section>   
     <!-- MENU SECTION END-->
     <div class="content-wrapper">
-        <div class="container">
+        <div class="container">			
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style="color: #575757;"><?php echo $_SESSION['preferences']['title']; ?></h1>
+				</div>
+			</div>
             <div class="row">
                 <div class="col-md-12">
                     <h4 class="page-head-line">Please Sign Up To Proceed </h4>

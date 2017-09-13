@@ -6,6 +6,8 @@ $con = new pdo_db();
 
 $judges = $con->getData("SELECT * FROM judges");
 
+$_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,7 +19,7 @@ $judges = $con->getData("SELECT * FROM judges");
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Judge Registration - Sayaw-Awit Competition | Tabulation System</title>
+    <title><?php echo $_SESSION['preferences']['title']; ?> - Judge Registration | Tabulation System</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME ICONS  -->
@@ -80,6 +82,11 @@ $judges = $con->getData("SELECT * FROM judges");
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <h1 style="color: #575757;"><?php echo $_SESSION['preferences']['title']; ?></h1>
+				</div>
+			</div>		
+            <div class="row">
+                <div class="col-md-12">
                     <h4 class="page-head-line">Login Judge</h4>
                 </div>
             </div>
@@ -89,19 +96,22 @@ $judges = $con->getData("SELECT * FROM judges");
 						<div class="form-group">
 							<label>Judges</label>
 							<select class="form-control" name="judge_id">
-							<?php
-								
-								foreach ($judges as $judge) {
-									
-									echo '<option value="'.$judge['id'].'">'.$judge['first_name'].' '.$judge['last_name'].'</option>';
-									
-								}
-								
+							<?php								
+								foreach ($judges as $judge) {									
+									echo '<option value="'.$judge['id'].'">'.$judge['first_name'].' '.$judge['last_name'].'</option>';									
+								};								
 							?>
 							</select>
 						</div>
+						<div class="form-group<?php echo (isset($_GET['status']) && ($_GET['status'] == 'invalid_token'))?' has-error':''; ?>">
+							<label>Admin Token</label>
+							<input type="password" class="form-control" name="admin_token">
+							<?php if (isset($_GET['status']) && ($_GET['status'] == 'invalid_token')) { ?>							
+							<div class="alert alert-danger" style="margin-top: 5px;">Invalid token</div>
+							<?php } ?>
+						</div>
 						<div class="form-group">
-							<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-user"></span>&nbsp;Login</button>						
+							<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-user"></span>&nbsp;Login</button>
 						</div>
 					</form>				
                 </div>

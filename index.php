@@ -13,7 +13,7 @@ require_once 'authentication.php';
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Judge Dashboard - Sayaw-Awit Competition | Tabulation System</title>
+    <title><?php echo $_SESSION['preferences']['title']; ?> - Judge Dashboard | Tabulation System</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME ICONS  -->
@@ -74,9 +74,13 @@ require_once 'authentication.php';
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <h1 style="color: #575757;"><?php echo $_SESSION['preferences']['title']; ?></h1>
+				</div>
+			</div>		
+            <div class="row">
+                <div class="col-md-12">
                     <h4 class="page-head-line">Judge Dashboard</h4>
                 </div>
-
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -118,7 +122,7 @@ require_once 'authentication.php';
 										</td>
 										<td>
 											<button type="button" class="btn btn-default btn-sm" ng-click="score(criterion)">
-											<span ng-class="{'glyphicon': true, 'glyphicon-pencil': views.criteria[criterion.criteria_id], 'glyphicon-saved': !views.criteria[criterion.criteria_id]}" aria-hidden="true"></span>
+												<span ng-class="{'glyphicon': true, 'glyphicon-pencil': views.criteria[criterion.criteria_id], 'glyphicon-saved': !views.criteria[criterion.criteria_id]}" aria-hidden="true"></span>
 											</button>
 										</td>
 									</tr>
@@ -165,7 +169,7 @@ require_once 'authentication.php';
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    &copy; 2016 PGLU | MISD
+                    &copy; <?php echo date("Y"); ?> PGLU | MISD
                 </div>
             </div>
         </div>

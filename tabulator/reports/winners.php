@@ -11,18 +11,18 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-    $this->Image('logo.png',80,10);
+    $this->Image('pglu.png',80,10);
 	
 	global $title, $subtitle;
 	
     // Arial bold 15
-	$this->Ln(25);	
-    $this->SetFont('Arial','',10);
+	$this->Ln(25);
     $this->SetTextColor(66,66,66);
-    $this->Cell(0,5,'PGLU Christmas Party 2016',0,1,'C');
-    $this->SetFont('Arial','B',14);
-	$this->SetFontSize(11);
+    $this->SetFont('Arial','B',18);
     $this->Cell(0,5,$title,0,1,'C');
+    $this->Ln(2);
+    $this->SetFont('Arial','I',12);	
+    $this->Cell(0,5,date("F j, Y"),0,1,'C');
     $this->Ln(5);
 	$this->SetDrawColor(92,92,92);
 	$this->Line(5,30,205,30);
@@ -54,7 +54,7 @@ function Footer()
     $this->SetFont('Arial','I',8);
     // Page number
     $this->SetTextColor(66,66,66);	
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+    // $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
 }
 
 function winners($header, $data)
@@ -96,7 +96,9 @@ function winners($header, $data)
 
 }
 
-$title = "Sayaw-Awit Competition";
+$preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
+
+$title = $preferences['title'];
 $subtitle = "Winners";
 
 $pdf = new PDF();

@@ -15,7 +15,11 @@ switch ($_GET['r']) {
 	
 	$contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
 	
-	echo json_encode(array("judge"=>$judge[0],"contestants"=>$contestants));
+	if (count($judge)) {
+		echo json_encode(array("judge"=>$judge[0],"contestants"=>$contestants));
+	} else {
+		echo json_encode(array("judge"=>[],"contestants"=>[]));
+	}
 	
 	break;
 
@@ -47,13 +51,17 @@ switch ($_GET['r']) {
 		
 	}
 	
-	foreach ($standing as $key2 => $value2) {
-		
-		$rank[] = $standing[$key2]['score'];
+	if (count($standing)) {
+	
+		foreach ($standing as $key2 => $value2) {
+			
+			$rank[] = $standing[$key2]['score'];
+			
+		}
+
+		array_multisort($rank, SORT_DESC, $standing);
 		
 	}
-
-	array_multisort($rank, SORT_DESC, $standing);	
 	
 	echo json_encode($standing);
 	

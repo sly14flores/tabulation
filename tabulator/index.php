@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+require_once '../db.php';
+
+$con = new pdo_db();
+
+$preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
+	
+?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -8,7 +17,7 @@
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
-    <title>Tabulator Dashboard - Sayaw-Awit Competition | Tabulation System</title>
+    <title><?php echo $preferences['title'] ?> - Tabulator Dashboard | Tabulation System</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME ICONS  -->
@@ -68,9 +77,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <h1 style="color: #575757;"><?php echo $preferences['title']; ?></h1>
+				</div>
+			</div>		
+            <div class="row">
+                <div class="col-md-12">
                     <h4 class="page-head-line">Tabulator Dashboard</h4>
                 </div>
-
             </div>
             <div class="row">
                 <div class="col-md-6">				

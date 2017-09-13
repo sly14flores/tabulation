@@ -70,13 +70,17 @@ switch ($_GET['r']) {
 		
 	}
 	
-	foreach ($standing as $key3 => $value3) {
-		
-		$rank[] = $standing[$key3]['score'];
-		
-	}
-
-	array_multisort($rank, SORT_DESC, $standing);	
+	if (count($standing)) {	
+	
+		foreach ($standing as $key3 => $value3) {
+			
+			$rank[] = $standing[$key3]['score'];
+			
+		}
+	
+		array_multisort($rank, SORT_DESC, $standing);	
+	
+	}	
 	
 	echo json_encode($standing);
 	
@@ -107,28 +111,20 @@ switch ($_GET['r']) {
 
 	$con1 = new pdo_db("winners");
 	$con2 = new pdo_db("consolation_prizes");
+
+	$wds = $con1->getData("SELECT * FROM winners_descriptions ORDER BY id ASC");
 	
 	$winners = [];
 	$consolations = [];
 	
 	foreach ($_POST as $key => $value) {
 		
-		if ($key == 0) {
-			$winners[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"First");
-		}
-		
-		if ($key == 1) {
-			$winners[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Second");
-		}
-		
-		if ($key == 2) {
-			$winners[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Third");			
-		}
-		
-		if ($key >= 3) {
+		if ($key > (count($wds)-1)) {
+			$winners[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>$wds[$key]['description']);			
+		} else {
 			$consolations[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Consolation Prize");			
 		}
-		
+
 	}
 	
 	$con1->db->exec("DELETE FROM winners");

@@ -1,0 +1,27 @@
+[13-Sep-2017 12:00:42 Asia/Manila] PHP Notice:  Undefined index: title in C:\Users\sly\Desktop\UwAmp310\www\tabulation\login.php on line 24
+[13-Sep-2017 12:00:42 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 12:00:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\login.php:0
+[13-Sep-2017 13:24:17 Asia/Manila] PHP Notice:  Undefined index: preferences in C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php on line 16
+[13-Sep-2017 13:24:17 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 13:24:17 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php:0
+[13-Sep-2017 13:24:17 Asia/Manila] PHP Notice:  Undefined index: preferences in C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php on line 77
+[13-Sep-2017 13:24:17 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 13:24:17 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php:0
+[13-Sep-2017 13:24:28 Asia/Manila] PHP Notice:  Undefined index: preferences in C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php on line 16
+[13-Sep-2017 13:24:28 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 13:24:28 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php:0
+[13-Sep-2017 13:24:28 Asia/Manila] PHP Notice:  Undefined index: preferences in C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php on line 77
+[13-Sep-2017 13:24:28 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 13:24:28 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php:0
+[13-Sep-2017 13:26:24 Asia/Manila] PHP Notice:  Undefined index: preferences in C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php on line 16
+[13-Sep-2017 13:26:24 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 13:26:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php:0
+[13-Sep-2017 13:26:24 Asia/Manila] PHP Notice:  Undefined index: preferences in C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php on line 77
+[13-Sep-2017 13:26:24 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 13:26:24 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php:0
+[13-Sep-2017 13:31:03 Asia/Manila] PHP Notice:  Undefined index: preferences in C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php on line 16
+[13-Sep-2017 13:31:03 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 13:31:03 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php:0
+[13-Sep-2017 13:31:03 Asia/Manila] PHP Notice:  Undefined index: preferences in C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php on line 77
+[13-Sep-2017 13:31:03 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 13:31:03 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\index.php:0
