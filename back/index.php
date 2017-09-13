@@ -42,7 +42,7 @@ $judges = $con->getData("SELECT * FROM judges");
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                    <img src="../assets/img/logo.png" />
+                    <img src="../assets/img/pglu.png" />
                 </a>
             </div>
 
