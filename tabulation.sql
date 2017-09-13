@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 12, 2017 at 03:59 PM
+-- Generation Time: Sep 13, 2017 at 03:19 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -44,25 +44,9 @@ CREATE TABLE `contestants` (
   `no` int(10) NOT NULL DEFAULT '0',
   `cluster_name` varchar(100) NOT NULL,
   `leader` varchar(100) NOT NULL,
-  `remarks` varchar(100) NOT NULL,
-  `is_active` int(10) NOT NULL
+  `remarks` varchar(100) DEFAULT NULL,
+  `is_active` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `contestants`
---
-
-INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `remarks`, `is_active`) VALUES
-(1, 0, 'ACCTG, BUDGET, PTO, LEGAL', 'FRENZILYN MAMARIL', '', 1),
-(2, 0, 'CMCH, RDH', 'LORENZO ORTEGA', '', 0),
-(3, 0, 'OPAG, OPVET & PSWDO', 'JOHN RAY DIAZ', '', 1),
-(4, 0, 'SP', 'JANE FLORES', '', 1),
-(5, 0, 'PITO, ASSESSOR, PPO', 'ARTHUR CORTEZ', '', 0),
-(6, 0, 'BDH, BALDH', 'MARK PARCHAMENTO', '', 1),
-(7, 0, 'LUMC', 'ARIANE AMPARO', '', 1),
-(8, 0, 'PHO, NDH', '', '', 1),
-(9, 0, 'OPG (All Divisions)', 'Aizel Trisha Joyce Villaremo', '', 1),
-(10, 0, 'PGSO, PPDC & PEO', 'DONG ALCANTARA', '', 1);
 
 -- --------------------------------------------------------
 
@@ -81,12 +65,11 @@ CREATE TABLE `criteria` (
 --
 
 INSERT INTO `criteria` (`id`, `description`, `percentage`) VALUES
-(1, 'Stage Presence', 20),
-(2, 'Choreography & Creativity', 20),
-(3, 'Vocals', 20),
-(4, 'Costume & Props', 15),
-(5, 'Mastery', 15),
-(6, 'Audience Impact', 10);
+(1, 'Theme/Concept', 35),
+(2, 'Choreography', 20),
+(3, 'Performance', 20),
+(4, 'Costume', 15),
+(5, 'Props', 10);
 
 -- --------------------------------------------------------
 
@@ -113,15 +96,16 @@ CREATE TABLE `preferences` (
   `on_going_contestant` int(10) NOT NULL,
   `minimum_score` int(10) NOT NULL,
   `maximum_score` int(10) NOT NULL,
-  `signup_token` int(10) NOT NULL
+  `signup_token` int(10) NOT NULL,
+  `admin_token` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `preferences`
 --
 
-INSERT INTO `preferences` (`id`, `title`, `on_going_contestant`, `minimum_score`, `maximum_score`, `signup_token`) VALUES
-(1, 'Sayaw Awit', 0, 5, 10, 12345);
+INSERT INTO `preferences` (`id`, `title`, `on_going_contestant`, `minimum_score`, `maximum_score`, `signup_token`, `admin_token`) VALUES
+(1, 'Street Dance Parade', 0, 5, 10, 12345, '2017tabulation');
 
 -- --------------------------------------------------------
 
@@ -149,6 +133,26 @@ CREATE TABLE `winners` (
   `overall_score` decimal(10,2) NOT NULL,
   `place` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `winners_descriptions`
+--
+
+CREATE TABLE `winners_descriptions` (
+  `id` int(10) NOT NULL,
+  `descripiton` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `winners_descriptions`
+--
+
+INSERT INTO `winners_descriptions` (`id`, `descripiton`) VALUES
+(1, 'Champion'),
+(2, 'First Runner Up'),
+(3, 'Second Runner-Up');
 
 --
 -- Indexes for dumped tables
@@ -202,6 +206,12 @@ ALTER TABLE `winners`
   ADD UNIQUE KEY `contestat_id` (`contestant_id`);
 
 --
+-- Indexes for table `winners_descriptions`
+--
+ALTER TABLE `winners_descriptions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -209,17 +219,17 @@ ALTER TABLE `winners`
 -- AUTO_INCREMENT for table `consolation_prizes`
 --
 ALTER TABLE `consolation_prizes`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `contestants`
 --
 ALTER TABLE `contestants`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `criteria`
 --
 ALTER TABLE `criteria`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `judges`
 --
@@ -234,12 +244,17 @@ ALTER TABLE `preferences`
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `winners`
 --
 ALTER TABLE `winners`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `winners_descriptions`
+--
+ALTER TABLE `winners_descriptions`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
