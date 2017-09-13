@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 13, 2017 at 03:19 PM
+-- Generation Time: Sep 13, 2017 at 03:26 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -43,7 +43,7 @@ CREATE TABLE `contestants` (
   `id` int(10) NOT NULL,
   `no` int(10) NOT NULL DEFAULT '0',
   `cluster_name` varchar(100) NOT NULL,
-  `leader` varchar(100) NOT NULL,
+  `leader` varchar(100) DEFAULT NULL,
   `remarks` varchar(100) DEFAULT NULL,
   `is_active` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
