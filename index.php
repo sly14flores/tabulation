@@ -61,6 +61,7 @@ require_once 'authentication.php';
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a class="menu-top-active" href="index.php">Judge Dashboard</a></li>
+							<li><a class="menu-top" href="javascript:;" ng-click="logout()">Logout</a></li>
                         </ul>
                     </div>
                 </div>

@@ -99,4 +99,10 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 	}
 	
-})
+	$scope.logout = function() {
+		
+		$window.location.href = 'logout.php';
+	
+	}
+	
+});
