@@ -11,7 +11,7 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-    $this->Image('logo.png',80,10);
+    $this->Image('pglu.png',80,10);
 	
 	global $title, $subtitle;
 	
@@ -19,7 +19,7 @@ function Header()
 	$this->Ln(25);	
     $this->SetFont('Arial','',10);
     $this->SetTextColor(66,66,66);
-    $this->Cell(0,5,'PGLU Christmas Party 2016',0,1,'C');
+    $this->Cell(0,5,'AYAT FESTIVAL 2017',0,1,'C');
     $this->SetFont('Arial','B',14);
 	$this->SetFontSize(11);
     $this->Cell(0,5,$title,0,1,'C');
