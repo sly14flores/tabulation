@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 13, 2017 at 03:26 PM
+-- Generation Time: Sep 14, 2017 at 10:27 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -47,6 +47,16 @@ CREATE TABLE `contestants` (
   `remarks` varchar(100) DEFAULT NULL,
   `is_active` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contestants`
+--
+
+INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `remarks`, `is_active`) VALUES
+(1, 1, 'Agoo', NULL, NULL, 1),
+(2, 2, 'Caba', NULL, NULL, 1),
+(3, 3, 'Aringay', NULL, NULL, 1),
+(4, 4, 'San Fernando City', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -142,16 +152,16 @@ CREATE TABLE `winners` (
 
 CREATE TABLE `winners_descriptions` (
   `id` int(10) NOT NULL,
-  `descripiton` varchar(100) DEFAULT NULL
+  `description` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `winners_descriptions`
 --
 
-INSERT INTO `winners_descriptions` (`id`, `descripiton`) VALUES
+INSERT INTO `winners_descriptions` (`id`, `description`) VALUES
 (1, 'Champion'),
-(2, 'First Runner Up'),
+(2, 'First Runner-Up'),
 (3, 'Second Runner-Up');
 
 --
@@ -219,12 +229,12 @@ ALTER TABLE `winners_descriptions`
 -- AUTO_INCREMENT for table `consolation_prizes`
 --
 ALTER TABLE `consolation_prizes`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `contestants`
 --
 ALTER TABLE `contestants`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `criteria`
 --
@@ -234,7 +244,7 @@ ALTER TABLE `criteria`
 -- AUTO_INCREMENT for table `judges`
 --
 ALTER TABLE `judges`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `preferences`
 --
@@ -244,12 +254,12 @@ ALTER TABLE `preferences`
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 --
 -- AUTO_INCREMENT for table `winners`
 --
 ALTER TABLE `winners`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `winners_descriptions`
 --
