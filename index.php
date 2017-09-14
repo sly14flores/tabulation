@@ -100,8 +100,8 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
             <div class="row">
                 <div class="col-md-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong>
-							<div class="pull-right" >
+						<div class="panel-heading">
+							<div>
 								<div class="dropdown">
 								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true">
 									<span class="glyphicon glyphicon-user"></span>
@@ -111,7 +111,8 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 									<li ng-repeat="contestant in contestants" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulate(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.no}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
 								  </ul>
 								</div>
-							</div>							
+							</div>
+							Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong>							
 						</div>
 						<div class="panel-body">
 						<div class="table-responsive">
@@ -124,10 +125,10 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 										<td>{{criterion.description}}</td>
 										<td>{{criterion.percentage}}</td>
 										<td>
-											<input type="number" class="form-control" ng-disabled="views.criteria[criterion.criteria_id]" name="score" ng-model="criterion.score" min="1" max="{{criterion.percentage}}">
+											<input type="number" class="form-control" ng-disabled="views.criteria[criterion.criteria_id]" name="score" id="score{{$index}}" ng-model="criterion.score" min="1" max="{{criterion.percentage}}">
 										</td>
 										<td>
-											<button type="button" class="btn btn-default btn-sm" ng-click="score(criterion)">
+											<button type="button" class="btn btn-default btn-sm" ng-click="score(criterion,$index)">
 												<span ng-class="{'glyphicon': true, 'glyphicon-pencil': views.criteria[criterion.criteria_id], 'glyphicon-saved': !views.criteria[criterion.criteria_id]}" aria-hidden="true"></span>
 											</button>
 										</td>

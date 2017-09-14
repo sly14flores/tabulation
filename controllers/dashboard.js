@@ -91,12 +91,13 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 	}
 	
-	$scope.score = function(criterion) {
+	$scope.score = function(criterion,index) {
+	
+		$scope.views.criteria[criterion.criteria_id] = !$scope.views.criteria[criterion.criteria_id];		
 
-		$scope.views.criteria[criterion.criteria_id] = !$scope.views.criteria[criterion.criteria_id];
-		
 		if ($scope.views.criteria[criterion.criteria_id]) {
-		if (criterion.score == 0) console.log(criterion.score);
+
+			if (criterion.score == 0) console.log(criterion.score);
 			blockUI.show("Saving please wait...");
 			$http({
 			  method: 'POST',
