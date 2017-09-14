@@ -138,7 +138,7 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    &copy; 2016 PGLU | MISD
+                    &copy; <?php echo date("Y"); ?> PGLU | MISD
                 </div>
             </div>
         </div>

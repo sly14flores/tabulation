@@ -116,13 +116,13 @@ switch ($_GET['r']) {
 	
 	$winners = [];
 	$consolations = [];
-	
+
 	foreach ($_POST as $key => $value) {
 		
 		if ($key > (count($wds)-1)) {
-			$winners[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>$wds[$key]['description']);			
+			$consolations[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Consolation Prize");						
 		} else {
-			$consolations[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>"Consolation Prize");			
+			$winners[] = array("contestant_id"=>$value['id'],"overall_score"=>$value['score'],"place"=>$wds[$key]['description']);
 		}
 
 	}

@@ -736,3 +736,12 @@ Stack trace:
 [13-Sep-2017 11:56:40 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 18
 [13-Sep-2017 11:56:40 Asia/Manila] PHP Stack trace:
 [13-Sep-2017 11:56:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[13-Sep-2017 17:22:33 Asia/Manila] PHP Notice:  Undefined index: score in C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 99
+[13-Sep-2017 17:22:33 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 17:22:33 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[13-Sep-2017 17:23:07 Asia/Manila] PHP Notice:  Undefined index: score in C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 99
+[13-Sep-2017 17:23:07 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 17:23:07 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[13-Sep-2017 17:25:13 Asia/Manila] PHP Notice:  Undefined index: score in C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 99
+[13-Sep-2017 17:25:13 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 17:25:13 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0

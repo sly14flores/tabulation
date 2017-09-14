@@ -85,10 +85,12 @@ function winners($header, $data)
     $fill = false;
     foreach($data as $key => $row) {
 		foreach ($header as $i => $h) {
+			$this->SetFont('Arial','',14);
+			if ($i == 0) $this->SetFont('Arial','',12);
 			$this->Cell(array_keys($header[$i])[0],12,$row[array_keys($row)[$i]],'LR',0,'C',$fill);
 		}
         $this->Ln();
-        $fill = !$fill;		
+        $fill = !$fill;
     }	
     $this->Cell($closingLine,0,'','T');
 
@@ -107,10 +109,10 @@ $pdf->AddPage();
 $pdf->SetFont('Arial','',14);
 
 $header = array(
-	array(30=>"Place"),
-	array(25=>"No"),
+	array(45=>"Place"),
+	array(15=>"No"),
 	array(100=>"Contestant"),
-	array(35=>"Score")
+	array(30=>"Score")
 );
 
 $sql = "SELECT place, (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) contestant, overall_score FROM winners";

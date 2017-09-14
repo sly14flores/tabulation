@@ -253,29 +253,44 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 						</div>
 						<div class="panel-body">
 						<div class="table-responsive">
-							
-							<div class="panel panel-primary" ng-repeat="judge in views.judges">
-								<div class="panel-heading">
-									{{judge.name}}
+							<div>
+
+							  <!-- Nav tabs -->
+							  <ul class="nav nav-tabs" role="tablist">
+								<li ng-repeat="judge in views.judges" role="presentation" ng-class="{'active': views.tabulationIndex == $index}"><a href="#judge{{$index}}" aria-controls="judge{{$index}}" role="tab" data-toggle="tab" ng-click="logIndex(this,$index)">{{judge.name}}</a></li>
+							  </ul>
+
+							  <!-- Tab panes -->
+							  <div class="tab-content">
+								<hr>
+								<div ng-repeat="judge in views.judges" role="tabpanel" class="tab-pane" ng-class="{'active': views.tabulationIndex == $index}" id="judge{{$index}}">
+									<div class="panel panel-primary">
+										<div class="panel-heading">
+											{{judge.name}}
+										</div>
+										<div class="panel-body">
+											<table class="table table-striped table-bordered table-hover">
+												<thead>
+													<tr><th>Criteria</th><th>Percentage</th><th>Score</th></tr>										
+												</thead>
+												<tbody>
+													<tr ng-repeat="score in judge.scores">
+														<td>{{score.description}}</td>
+														<td>{{score.percentage}}</td>
+														<td>{{score.score}}</td>
+													</tr>
+												</tbody>									
+											</table>
+										</div>
+										<div class="panel-footer">
+											Total: <strong>{{judge.total_score}}</strong>
+										</div>								
+									</div>								
 								</div>
-								<div class="panel-body">
-									<table class="table table-striped table-bordered table-hover">
-										<thead>
-											<tr><th>Criteria</th><th>Percentage</th><th>Score</th></tr>										
-										</thead>
-										<tbody>
-											<tr ng-repeat="score in judge.scores">
-												<td>{{score.description}}</td>
-												<td>{{score.percentage}}</td>
-												<td>{{score.score}}</td>
-											</tr>
-										</tbody>									
-									</table>
-								</div>
-								<div class="panel-footer">
-									Total: <strong>{{judge.total_score}}</strong>
-								</div>								
-							</div>
+							  </div>
+
+							</div>							
+
 							
 						</div>
 						<!--<div class="panel-footer">
@@ -315,6 +330,6 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 	<script src="../modules/bootstrap-notify.js"></script>
 	
 	<!-- controller -->
-	<script src="controllers/dashboard.js"></script>	
+	<script src="controllers/dashboard.js"></script>
 </body>
 </html>

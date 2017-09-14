@@ -120,3 +120,10 @@
 [13-Sep-2017 13:51:55 Asia/Manila] PHP Notice:  Undefined index: name in C:\Users\sly\Desktop\UwAmp310\www\tabulation\back\back.php on line 23
 [13-Sep-2017 13:51:55 Asia/Manila] PHP Stack trace:
 [13-Sep-2017 13:51:55 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\back\back.php:0
+[13-Sep-2017 17:26:10 Asia/Manila] PHP Notice:  A session had already been started - ignoring session_start() in C:\Users\sly\Desktop\UwAmp310\www\tabulation\back\back.php on line 21
+[13-Sep-2017 17:26:10 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 17:26:10 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\back\back.php:0
+[13-Sep-2017 17:26:10 Asia/Manila] PHP   2. session_start() C:\Users\sly\Desktop\UwAmp310\www\tabulation\back\back.php:21
+[13-Sep-2017 17:26:10 Asia/Manila] PHP Notice:  Undefined index: name in C:\Users\sly\Desktop\UwAmp310\www\tabulation\back\back.php on line 23
+[13-Sep-2017 17:26:10 Asia/Manila] PHP Stack trace:
+[13-Sep-2017 17:26:10 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\back\back.php:0

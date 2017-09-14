@@ -7,7 +7,7 @@ app.controller('signupCtrl',function($window,$timeout,$http,$scope,bootstrapNoti
 	
 	$http({
 	  method: 'POST',
-	  url: 'controllers/signup.php?r=token'
+	  url: 'controllers/signup.php?r=token'  
 	}).then(function mySucces(response) {
 		
 		$scope.views.token = response.data['signup_token'];

@@ -7,6 +7,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 	$scope.views.filter = 'Overall';
 	$scope.views.opt = {id: 0, name: 'Overall'};
 	$scope.views.tabulation = 0;
+	$scope.views.tabulationIndex = 0;
 	
 	$scope.views.declareWinners = false;
 	
@@ -185,7 +186,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 		var frm = '<form>';
 			frm += '<div class="form-group">';
-			frm += '<label>No</label>';
+			frm += '<label>Remarks</label>';
 			frm += '<input class="form-control" name="remarks" ng-model="judge_status.remarks" type="text">';
 			frm += '</div>';			
 			frm += '</form>';
@@ -232,6 +233,12 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 
 		window.open("reports/consolation-prizes.php");	
 	
+	};
+	
+	$scope.logIndex = function(scope,index) {
+		
+		scope.views.tabulationIndex = index;
+		
 	};
 
 });	
