@@ -63,8 +63,8 @@ switch ($_GET['r']) {
 			$overall_score += $score;
 
 		}
-		
-		$score_average = $overall_score/$no_of_judges;
+
+		if ($no_of_judges > 0) $score_average = $overall_score/$no_of_judges;
 		
 		$standing[] = array("id"=>$value['id'],"no"=>$value['no'],"name"=>$value['cluster_name'],"score"=>$score_average);		
 		
