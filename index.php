@@ -2,6 +2,12 @@
 
 require_once 'authentication.php';
 
+require_once 'db.php';
+
+$con = new pdo_db();
+
+$_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -138,7 +144,13 @@ require_once 'authentication.php';
                 </div>
                 <div class="col-md-6">
 					<div class="panel panel-default">
-						<div class="panel-heading">Standing</div>
+						<div class="panel-heading">Standing
+							<div class="pull-right" >
+								  <button class="btn btn-success btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" ng-click="refreshStanding(this)">
+									<span class="glyphicon glyphicon-refresh"></span>
+								  </button>
+							</div>							
+						</div>
 						<div class="panel-body">
 						<div class="table-responsive">
 							<table class="table table-striped table-bordered table-hover">

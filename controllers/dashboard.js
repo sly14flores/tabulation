@@ -38,9 +38,9 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 	
 	}, function myError(response) {
 		
-	});	
+	});
 	
-	$interval(function() {
+/* 	$interval(function() {
 		
 		$http({
 		  method: 'POST',
@@ -53,7 +53,22 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 			
 		});		
 		
-	},2000);
+	},2000); */
+	
+	$scope.refreshStanding = function(scope) {
+		
+		$http({
+		  method: 'POST',
+		  url: 'controllers/dashboard.php?r=standing'
+		}).then(function mySucces(response) {
+			
+			$scope.standing = response.data;
+		
+		}, function myError(response) {
+			
+		});			
+		
+	};
 	
 	$scope.tabulate = function(id) {
 		

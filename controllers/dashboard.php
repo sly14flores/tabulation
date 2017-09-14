@@ -40,13 +40,14 @@ switch ($_GET['r']) {
 		*/
 
 		$score = 0;
-		$sql = "SELECT *, (SELECT percentage FROM criteria WHERE id = criteria_id) percentage FROM scores WHERE contestant_id = $value[id] AND judge_id = $_SESSION[judge_id]";
+		$judge_id = (isset($_SESSION['judge_id']))?$_SESSION['judge_id']:0;
+		$sql = "SELECT *, (SELECT percentage FROM criteria WHERE id = criteria_id) percentage FROM scores WHERE contestant_id = $value[id] AND judge_id = $judge_id";
 		$contestant_scores = $con->getData($sql);
 
  		foreach ($contestant_scores as $key1 => $value1) {
 
 			// $score += ($value1['score']*$value1['percentage'])/100;			
-			$score += $value1['score'];			
+			$score += $value1['score'];		
 			
 		}
 		
@@ -96,7 +97,7 @@ switch ($_GET['r']) {
 	
 	$con = new pdo_db("scores");
 
-	if ($_POST['score'] == "") $_POST['score'] = 0;
+	if (!isset($_POST['score']) || ($_POST['score'] == "")) $_POST['score'] = 0;
 	
 	$score = $con->query("UPDATE scores SET score = $_POST[score] WHERE id = $_POST[id]");
 	

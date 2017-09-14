@@ -4,9 +4,9 @@ require_once '../db.php';
 
 $con = new pdo_db();
 
-$sql = "SELECT * FROM judges WHERE id = ".$_POST['judge_id'];
+$sql = "SELECT id, CONCAT(first_name, ' ', last_name) name FROM judges WHERE id = ".$_POST['judge_id'];
 
-session_start();
+if (!isset($_SESSION['preferences'])) session_start();
 
 $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 
@@ -18,7 +18,7 @@ if (count($judge)) {
 	
 		foreach ($judge as $value) {
 			
-			session_start();
+			if (!isset($_SESSION['preferences'])) session_start();
 			$_SESSION['judge_id'] = $value['id'];
 			$_SESSION['judge_name'] = $value['name'];	
 			header("location: ../index.php");

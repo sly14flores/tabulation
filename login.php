@@ -72,7 +72,7 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a class="menu-top-active" href="login.php">Login</a></li>
+                            <li><a class="menu-top-active" href="back/">Login</a></li>
                         </ul>
                     </div>
                 </div>
