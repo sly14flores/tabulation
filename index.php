@@ -103,12 +103,12 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 						<div class="panel-heading">
 							<div>
 								<div class="dropdown">
-								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true">
-									<span class="glyphicon glyphicon-user"></span>
+								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px!important;">
+									&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
 									<span class="caret"></span>
 								  </button>
 								  <ul class="dropdown-menu" role="menu">
-									<li ng-repeat="contestant in contestants" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulate(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.no}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
+									<li ng-repeat="contestant in contestants" role="presentation" style="padding: 8px!important"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulate(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.no}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
 								  </ul>
 								</div>
 							</div>
@@ -147,7 +147,7 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 					<div class="panel panel-default">
 						<div class="panel-heading">Standing
 							<div class="pull-right" >
-								  <button class="btn btn-success btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" ng-click="refreshStanding(this)">
+								  <button class="btn btn-success btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" ng-click="refreshStanding(this)" style="padding: 5px 10px;">
 									<span class="glyphicon glyphicon-refresh"></span>
 								  </button>
 							</div>							

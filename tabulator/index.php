@@ -115,7 +115,7 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 						<div class="panel-heading">Standing: <strong>{{views.filter}}</strong>
 							<div class="pull-right" >
 								<div class="dropdown">
-								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true">
+								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px 10px;">
 									<span class="glyphicon glyphicon-user"></span>
 									<span class="caret"></span>
 								  </button>
@@ -153,7 +153,7 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 							<strong>Winners</strong>
 							<div class="pull-right" >
 								<div class="dropdown">
-								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true">
+								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px 10px;">
 									<span class="glyphicon glyphicon-cog"></span>
 									<span class="caret"></span>
 								  </button>
@@ -184,7 +184,7 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 							<strong>Consolation Prize</strong>
 							<div class="pull-right" >
 								<div class="dropdown">
-								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true">
+								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px 10px;">
 									<span class="glyphicon glyphicon-cog"></span>
 									<span class="caret"></span>
 								  </button>
@@ -240,12 +240,12 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 						<div class="panel-heading">
 							<div class="pull-left" >
 								<div class="dropdown">
-								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true">
+								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px 10px;">
 									<span class="glyphicon glyphicon-user"></span>
 									<span class="caret"></span>
 								  </button>
 								  <ul class="dropdown-menu" role="menu">
-									<li ng-repeat="contestant in contestants" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulation(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.no}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
+									<li ng-repeat="contestant in contestants" role="presentation" style="padding: 10px;"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulation(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.no}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
 								  </ul>
 								</div>
 							</div>

@@ -1,0 +1,129 @@
+[15-Sep-2017 12:10:14 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:14 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:14 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:16 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:16 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:16 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:18 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:18 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:18 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:20 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:20 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:20 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:22 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:22 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:22 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:24 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:24 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:24 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:26 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:26 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:26 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:28 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:28 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:28 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:30 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:30 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:30 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:32 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:32 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:32 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:34 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:34 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:34 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:36 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:36 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:36 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:38 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:38 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:38 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:40 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:40 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:40 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:42 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:42 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:42 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:44 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:44 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:44 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:46 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:46 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:46 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:48 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:48 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:48 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:50 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:50 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:50 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:52 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:52 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:52 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:54 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:54 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:54 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:56 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:56 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:56 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:10:58 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:10:58 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:10:58 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:00 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:00 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:00 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:02 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:02 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:02 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:04 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:04 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:04 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:06 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:06 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:06 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:08 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:08 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:08 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:10 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:10 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:10 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:12 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:12 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:12 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:14 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:14 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:14 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:16 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:16 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:16 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:18 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:18 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:18 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:20 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:20 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:20 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:22 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:22 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:22 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:24 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:24 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:24 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:26 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:26 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:26 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:28 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:28 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:28 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:30 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:30 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:30 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:32 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:32 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:32 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:34 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:34 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:34 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:36 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:36 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:36 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[15-Sep-2017 12:11:38 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[15-Sep-2017 12:11:38 Asia/Manila] PHP Stack trace:
+[15-Sep-2017 12:11:38 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
