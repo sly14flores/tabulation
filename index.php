@@ -112,25 +112,20 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 								  </ul>
 								</div>
 							</div>
-							Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong>							
+							Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong><button type="button" class="btn btn-primary btn-sm pull-right" ng-click="scores(this)" ng-disabled="criteria.length == 0">{{(views.edit)?'Edit':'Save'}}</button>
 						</div>
 						<div class="panel-body">
 						<div class="table-responsive">
 							<table class="table table-striped table-bordered table-hover">
 								<thead>
-									<tr><th>Criteria</th><th>Percentage</th><th>Score</th><th>&nbsp;</th></tr>										
+									<tr><th>Criteria</th><th>Percentage</th><th>Score</th></tr>										
 								</thead>
 								<tbody>
 									<tr ng-repeat="criterion in criteria">
 										<td>{{criterion.description}}</td>
 										<td>{{criterion.percentage}}</td>
 										<td>
-											<input type="number" class="form-control" ng-disabled="views.criteria[criterion.criteria_id]" name="score" id="score{{$index}}" ng-model="criterion.score" min="1" max="{{criterion.percentage}}">
-										</td>
-										<td>
-											<button type="button" class="btn btn-default btn-sm" ng-click="score(criterion,$index)">
-												<span ng-class="{'glyphicon': true, 'glyphicon-pencil': views.criteria[criterion.criteria_id], 'glyphicon-saved': !views.criteria[criterion.criteria_id]}" aria-hidden="true"></span>
-											</button>
+											<input type="number" class="form-control" ng-disabled="views.edit" name="score" id="score{{$index}}" ng-model="criterion.score" min="1" max="{{criterion.percentage}}">
 										</td>
 									</tr>
 								</tbody>

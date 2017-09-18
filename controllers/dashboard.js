@@ -4,6 +4,8 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 	
 	$scope.views = {};
 	
+	$scope.views.edit = false;
+	
 	$scope.views.criteria = {
 		1: true,
 		2: true,
@@ -12,6 +14,8 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		5: true,
 		6: true
 	};
+	
+	$scope.criteria = [];
 	
 	$http({
 	  method: 'POST',
@@ -72,6 +76,8 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 	
 	$scope.tabulate = function(id) {
 		
+		$scope.views.edit = false;
+		
 		blockUI.show('Please wait...');
 		
 		$http({
@@ -112,6 +118,29 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 			});			
 			
 		}
+		
+	}
+	
+	$scope.scores = function(scope) {
+		
+		scope.views.edit = !scope.views.edit;
+		
+		if (scope.views.edit) {
+
+			blockUI.show("Saving please wait...");
+			$http({
+			  method: 'POST',
+			  url: 'controllers/dashboard.php?r=save_scores',
+			  data: scope.criteria
+			}).then(function mySucces(response) {
+			
+				blockUI.hide();
+				
+			}, function myError(response) {
+				
+			});				
+			
+		};
 		
 	}
 	

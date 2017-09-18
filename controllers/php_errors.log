@@ -52,3 +52,39 @@ Stack trace:
 #1 C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(82): pdo_db->getData('SELECT * FROM s...')
 #2 {main}
   thrown in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[19-Sep-2017 01:54:00 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 112
+[19-Sep-2017 01:54:00 Asia/Manila] PHP Stack trace:
+[19-Sep-2017 01:54:00 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[19-Sep-2017 01:54:00 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 113
+[19-Sep-2017 01:54:00 Asia/Manila] PHP Stack trace:
+[19-Sep-2017 01:54:00 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[19-Sep-2017 01:54:00 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 113
+[19-Sep-2017 01:54:00 Asia/Manila] PHP Stack trace:
+[19-Sep-2017 01:54:00 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[19-Sep-2017 01:54:00 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[score] WHERE id = Array[id]' at line 1 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\db.php:47
+Stack trace:
+#0 C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\db.php(47): PDO->query('UPDATE scores S...')
+#1 C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(113): pdo_db->query('UPDATE scores S...')
+#2 {main}
+  thrown in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\db.php on line 47
+[19-Sep-2017 01:54:53 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 113
+[19-Sep-2017 01:54:53 Asia/Manila] PHP Stack trace:
+[19-Sep-2017 01:54:53 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[19-Sep-2017 01:54:53 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 113
+[19-Sep-2017 01:54:53 Asia/Manila] PHP Stack trace:
+[19-Sep-2017 01:54:53 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[19-Sep-2017 01:54:53 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[score] WHERE id = Array[id]' at line 1 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\db.php:47
+Stack trace:
+#0 C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\db.php(47): PDO->query('UPDATE scores S...')
+#1 C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(113): pdo_db->query('UPDATE scores S...')
+#2 {main}
+  thrown in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\db.php on line 47
+[19-Sep-2017 01:56:47 Asia/Manila] PHP Notice:  Undefined index: score in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 112
+[19-Sep-2017 01:56:47 Asia/Manila] PHP Stack trace:
+[19-Sep-2017 01:56:47 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[19-Sep-2017 01:56:47 Asia/Manila] PHP Notice:  Undefined index: score in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 112
+[19-Sep-2017 01:56:47 Asia/Manila] PHP Stack trace:
+[19-Sep-2017 01:56:47 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[19-Sep-2017 01:56:47 Asia/Manila] PHP Notice:  Undefined index: score in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 112
+[19-Sep-2017 01:56:47 Asia/Manila] PHP Stack trace:
+[19-Sep-2017 01:56:47 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
