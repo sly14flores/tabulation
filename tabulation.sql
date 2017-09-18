@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 14, 2017 at 10:27 AM
+-- Generation Time: Sep 18, 2017 at 04:56 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -48,16 +48,6 @@ CREATE TABLE `contestants` (
   `is_active` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `contestants`
---
-
-INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `remarks`, `is_active`) VALUES
-(1, 1, 'Agoo', NULL, NULL, 1),
-(2, 2, 'Caba', NULL, NULL, 1),
-(3, 3, 'Aringay', NULL, NULL, 1),
-(4, 4, 'San Fernando City', NULL, NULL, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -75,11 +65,10 @@ CREATE TABLE `criteria` (
 --
 
 INSERT INTO `criteria` (`id`, `description`, `percentage`) VALUES
-(1, 'Theme/Concept', 35),
-(2, 'Choreography', 20),
-(3, 'Performance', 20),
-(4, 'Costume', 15),
-(5, 'Props', 10);
+(1, 'Mastery of the Piece', 20),
+(2, 'Interpretation (Voice projection and Voice quality)', 40),
+(3, 'Content and Relevance to the theme', 30),
+(4, 'Stage Presence', 10);
 
 -- --------------------------------------------------------
 
@@ -115,7 +104,7 @@ CREATE TABLE `preferences` (
 --
 
 INSERT INTO `preferences` (`id`, `title`, `on_going_contestant`, `minimum_score`, `maximum_score`, `signup_token`, `admin_token`) VALUES
-(1, 'Street Dance Parade', 0, 5, 10, 12345, '2017tabulation');
+(1, 'Elementary Salip iti Deklamasion', 0, 5, 10, 12345, '2017');
 
 -- --------------------------------------------------------
 
@@ -162,7 +151,8 @@ CREATE TABLE `winners_descriptions` (
 INSERT INTO `winners_descriptions` (`id`, `description`) VALUES
 (1, 'Champion'),
 (2, 'First Runner-Up'),
-(3, 'Second Runner-Up');
+(3, 'Second Runner-Up'),
+(4, 'Third Runner-Up');
 
 --
 -- Indexes for dumped tables
@@ -229,7 +219,7 @@ ALTER TABLE `winners_descriptions`
 -- AUTO_INCREMENT for table `consolation_prizes`
 --
 ALTER TABLE `consolation_prizes`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `contestants`
 --
@@ -254,17 +244,17 @@ ALTER TABLE `preferences`
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 --
 -- AUTO_INCREMENT for table `winners`
 --
 ALTER TABLE `winners`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `winners_descriptions`
 --
 ALTER TABLE `winners_descriptions`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
