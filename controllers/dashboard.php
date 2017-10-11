@@ -108,10 +108,13 @@ switch ($_GET['r']) {
 	$con = new pdo_db("scores");
 	
 	foreach ($_POST as $key => $score) {
-		
-		if ($_POST[$key]['score'] == "") $_POST[$key]['score'] = 0;
-		$score = $con->query("UPDATE scores SET score = ".$_POST[$key]['score']." WHERE id = ".$_POST[$key]['id']);		
-		
+		if (isset($_POST[$key]['score'])) {
+			$score = $_POST[$key]['score'];			
+			if ($_POST[$key]['score'] == "") $score = 0;
+		} else {
+			$score = 0;			
+		}
+		$score = $con->query("UPDATE scores SET score = $score WHERE id = ".$_POST[$key]['id']);
 	}
 	
 	

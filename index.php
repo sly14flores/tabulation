@@ -112,7 +112,7 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 								  </ul>
 								</div>
 							</div>
-							Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong><button type="button" class="btn btn-primary btn-sm pull-right" ng-click="scores(this)" ng-disabled="criteria.length == 0">{{(views.edit)?'Edit':'Save'}}</button>
+							Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong><button type="button" class="btn btn-primary btn-sm pull-right" ng-click="scores(this)" ng-disabled="criteria.length == 0">{{(views.edit)?'Edit Scores':'Submit Scores'}}</button>
 						</div>
 						<div class="panel-body">
 						<div class="table-responsive">
