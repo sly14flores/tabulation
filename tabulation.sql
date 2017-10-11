@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 14, 2017 at 10:27 AM
+-- Generation Time: Oct 11, 2017 at 11:16 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -53,10 +53,11 @@ CREATE TABLE `contestants` (
 --
 
 INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `remarks`, `is_active`) VALUES
-(1, 1, 'Agoo', NULL, NULL, 1),
-(2, 2, 'Caba', NULL, NULL, 1),
-(3, 3, 'Aringay', NULL, NULL, 1),
-(4, 4, 'San Fernando City', NULL, NULL, 1);
+(1, 0, 'Bauang', NULL, NULL, 1),
+(2, 0, 'San Fernando City', NULL, NULL, 1),
+(3, 0, 'Naguillan', NULL, NULL, 1),
+(4, 0, 'Balaoan', NULL, NULL, 1),
+(5, 0, 'Santo Tomas', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -75,11 +76,10 @@ CREATE TABLE `criteria` (
 --
 
 INSERT INTO `criteria` (`id`, `description`, `percentage`) VALUES
-(1, 'Theme/Concept', 35),
-(2, 'Choreography', 20),
-(3, 'Performance', 20),
-(4, 'Costume', 15),
-(5, 'Props', 10);
+(1, 'Tonal Quality (flexibility of voice, intonation & range)', 40),
+(2, 'Harmony (blending & balance, phrasing)', 30),
+(3, 'Mastery (dynamics, technique, interpretation)', 20),
+(4, 'Dapartment (general appearance, discipline & uniform)', 10);
 
 -- --------------------------------------------------------
 
@@ -93,6 +93,13 @@ CREATE TABLE `judges` (
   `first_name` varchar(100) NOT NULL,
   `remarks` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `judges`
+--
+
+INSERT INTO `judges` (`id`, `last_name`, `first_name`, `remarks`) VALUES
+(1, 'Flores', 'Sly', NULL);
 
 -- --------------------------------------------------------
 
@@ -115,7 +122,7 @@ CREATE TABLE `preferences` (
 --
 
 INSERT INTO `preferences` (`id`, `title`, `on_going_contestant`, `minimum_score`, `maximum_score`, `signup_token`, `admin_token`) VALUES
-(1, 'Street Dance Parade', 0, 5, 10, 12345, '2017tabulation');
+(1, 'Ilokano Chorale Finals', 0, 5, 10, 12345, '2017');
 
 -- --------------------------------------------------------
 
@@ -130,6 +137,28 @@ CREATE TABLE `scores` (
   `criteria_id` int(10) NOT NULL,
   `score` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `scores`
+--
+
+INSERT INTO `scores` (`id`, `judge_id`, `contestant_id`, `criteria_id`, `score`) VALUES
+(1, 1, 1, 1, 1),
+(2, 1, 1, 2, 1),
+(3, 1, 1, 3, 1),
+(4, 1, 1, 4, 1),
+(5, 1, 2, 1, 0),
+(6, 1, 2, 2, 0),
+(7, 1, 2, 3, 0),
+(8, 1, 2, 4, 0),
+(9, 1, 5, 1, 3),
+(10, 1, 5, 2, 3),
+(11, 1, 5, 3, 2),
+(12, 1, 5, 4, 2),
+(13, 1, 4, 1, 5),
+(14, 1, 4, 2, 5),
+(15, 1, 4, 3, 5),
+(16, 1, 4, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -162,7 +191,8 @@ CREATE TABLE `winners_descriptions` (
 INSERT INTO `winners_descriptions` (`id`, `description`) VALUES
 (1, 'Champion'),
 (2, 'First Runner-Up'),
-(3, 'Second Runner-Up');
+(3, 'Second Runner-Up'),
+(4, 'Third Runner-Up');
 
 --
 -- Indexes for dumped tables
@@ -229,22 +259,22 @@ ALTER TABLE `winners_descriptions`
 -- AUTO_INCREMENT for table `consolation_prizes`
 --
 ALTER TABLE `consolation_prizes`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `contestants`
 --
 ALTER TABLE `contestants`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `criteria`
 --
 ALTER TABLE `criteria`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `judges`
 --
 ALTER TABLE `judges`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `preferences`
 --
@@ -254,17 +284,17 @@ ALTER TABLE `preferences`
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `winners`
 --
 ALTER TABLE `winners`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `winners_descriptions`
 --
 ALTER TABLE `winners_descriptions`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
