@@ -6,6 +6,11 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 	
 	$scope.views.edit = false;
 	
+	$scope.views.portionIndex = 0;	
+	$scope.views.currentContestant = 0;
+	$scope.views.currentPortion	= '';
+	$scope.views.currentPortionId = 0;
+	
 	$scope.views.criteria = {
 		1: true,
 		2: true,
@@ -24,6 +29,11 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 
 		$scope.views.judge = response.data['judge']['name'];
 		$scope.contestants = response.data['contestants'];
+		$scope.portions = response.data['portions'];
+		if ($scope.portions.length > 0) {
+			$scope.views.currentPortion = $scope.portions[0].description;
+			$scope.views.currentPortionId = $scope.portions[0].id;
+		}
 		
 	}, function myError(response) {
 		
@@ -33,16 +43,21 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 	** standing
 	*/
 	
-	$http({
-	  method: 'POST',
-	  url: 'controllers/dashboard.php?r=standing'
-	}).then(function mySucces(response) {
+	$timeout(function() {
 		
-		$scope.standing = response.data;
-	
-	}, function myError(response) {
+		$http({
+		  method: 'POST',
+		  url: 'controllers/dashboard.php?r=standing',
+		  data: {portion_id: $scope.views.currentPortionId}
+		}).then(function mySucces(response) {
+			
+			$scope.standing = response.data;
 		
-	});
+		}, function myError(response) {
+			
+		});
+		
+	}, 300);
 	
 /* 	$interval(function() {
 		
@@ -63,7 +78,8 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 		$http({
 		  method: 'POST',
-		  url: 'controllers/dashboard.php?r=standing'
+		  url: 'controllers/dashboard.php?r=standing',
+		  data: {portion_id: scope.views.currentPortionId}
 		}).then(function mySucces(response) {
 			
 			$scope.standing = response.data;
@@ -74,16 +90,18 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 	};
 	
-	$scope.tabulate = function(id) {
+	$scope.tabulate = function(contestant_id,portion_id) {
 		
 		$scope.views.edit = false;
+		
+		$scope.views.currentContestant = contestant_id;
 		
 		blockUI.show('Please wait...');
 		
 		$http({
 		  method: 'POST',
 		  url: 'controllers/dashboard.php?r=tabulate',
-		  data: {id: id}
+		  data: {contestant_id: contestant_id, portion_id: portion_id}
 		}).then(function mySucces(response) {
 			
 			$scope.views.contestant_no = "No. "+response.data['no'];			
@@ -143,6 +161,19 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		};
 		
 	}
+	
+	$scope.logIndex = function(scope,index,portion) {
+		
+		scope.views.portionIndex = index;
+		if (scope.views.currentContestant) scope.tabulate(scope.views.currentContestant,portion.id);
+		scope.views.currentPortion = portion.description;
+		scope.views.currentPortionId = portion.id;
+		
+		$timeout(function() {
+			scope.refreshStanding(scope);
+		},300);
+		
+	};	
 	
 	$scope.logout = function() {
 		

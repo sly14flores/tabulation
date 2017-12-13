@@ -14,24 +14,26 @@ switch ($_GET['r']) {
 	case "startup":
 	
 	$con = new pdo_db();
-	$judge = $con->getData("SELECT CONCAT(first_name, ' ', last_name) name FROM judges WHERE id = $_SESSION[judge_id]");
+	$judge_q = $con->getData("SELECT CONCAT(first_name, ' ', last_name) name FROM judges WHERE id = $_SESSION[judge_id]");
 	
 	$contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
 	
-	if (count($judge)) {
-		echo json_encode(array("judge"=>$judge[0],"contestants"=>$contestants));
-	} else {
-		echo json_encode(array("judge"=>[],"contestants"=>[]));
-	}
+	$judge = (count($judge_q))?$judge_q[0]:array("name"=>"");
+	
+	$portions = $con->getData("SELECT * FROM portions");
+	
+	$response = array("judge"=>$judge,"contestants"=>$contestants,"portions"=>$portions);
+	
+	echo json_encode($response);
 	
 	break;
 
 	case "standing":
 	
-	$con = new pdo_db();	
+	$con = new pdo_db();
 
 	$contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
-	
+
 	$standing = [];
 	foreach ($contestants as $key => $value) {
 		
@@ -41,7 +43,8 @@ switch ($_GET['r']) {
 
 		$score = 0;
 		$judge_id = (isset($_SESSION['judge_id']))?$_SESSION['judge_id']:0;
-		$sql = "SELECT *, (SELECT percentage FROM criteria WHERE id = criteria_id) percentage FROM scores WHERE contestant_id = $value[id] AND judge_id = $judge_id";
+		$sql = "SELECT *, (SELECT criteria.percentage FROM criteria WHERE criteria.id = scores.criteria_id) percentage FROM scores LEFT JOIN criteria ON scores.criteria_id = criteria.id WHERE scores.contestant_id = $value[id] AND scores.judge_id = $judge_id AND criteria.portion_id = $_POST[portion_id]";
+
 		$contestant_scores = $con->getData($sql);
 
  		foreach ($contestant_scores as $key1 => $value1) {
@@ -74,20 +77,20 @@ switch ($_GET['r']) {
 	case "tabulate":
 
 	$con1 = new pdo_db("criteria");
-	$criteria = $con1->getData("SELECT * FROM criteria");
+	$criteria = $con1->getData("SELECT * FROM criteria WHERE portion_id = ".$_POST['portion_id']);
 	
 	$con2 = new pdo_db("scores");
 	foreach ($criteria as $criterion) {
-		$sql = "SELECT * FROM scores WHERE judge_id = $_SESSION[judge_id] AND contestant_id = $_POST[id] AND criteria_id = $criterion[id]";
+		$sql = "SELECT * FROM scores WHERE judge_id = $_SESSION[judge_id] AND contestant_id = $_POST[contestant_id] AND criteria_id = $criterion[id]";
  		$scores = $con2->getData($sql);
 		if ($con2->rows == 0) {
-			$insert_criteria = $con2->insertData(array("judge_id"=>$_SESSION['judge_id'],"contestant_id"=>$_POST['id'],"criteria_id"=>$criterion['id']));
+			$insert_criteria = $con2->insertData(array("judge_id"=>$_SESSION['judge_id'],"contestant_id"=>$_POST['contestant_id'],"criteria_id"=>$criterion['id']));
 		}
 	}
 	
-	$contestant = $con2->getData("SELECT no, cluster_name FROM contestants WHERE id = $_POST[id]");
+	$contestant = $con2->getData("SELECT no, cluster_name FROM contestants WHERE id = $_POST[contestant_id]");
 	
-	$contestant_criteria = $con2->getData("SELECT id, contestant_id, criteria_id, (SELECT description FROM criteria WHERE id = criteria_id) description, (SELECT percentage FROM criteria WHERE id = criteria_id) percentage, score FROM scores WHERE judge_id = $_SESSION[judge_id] AND contestant_id = $_POST[id]");
+	$contestant_criteria = $con2->getData("SELECT scores.id, scores.contestant_id, scores.criteria_id, (SELECT criteria.description FROM criteria WHERE criteria.id = scores.criteria_id) description, (SELECT criteria.percentage FROM criteria WHERE criteria.id = scores.criteria_id) percentage, scores.score FROM scores LEFT JOIN criteria ON scores.criteria_id = criteria.id WHERE scores.judge_id = $_SESSION[judge_id] AND scores.contestant_id = $_POST[contestant_id] AND criteria.portion_id = $_POST[portion_id]");
 	
 	echo json_encode(array("no"=>$contestant[0]['no'],"contestant"=>$contestant[0]['cluster_name'],"criteria"=>$contestant_criteria));
 	

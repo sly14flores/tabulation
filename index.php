@@ -94,53 +94,66 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
                         Welcome, <strong>{{views.judge}}</strong>
                     </div>
                 </div>
-
             </div>
       
             <div class="row">
-                <div class="col-md-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<div>
-								<div class="dropdown">
-								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px!important;">
-									&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
-									<span class="caret"></span>
-								  </button>
-								  <ul class="dropdown-menu" role="menu">
-									<li ng-repeat="contestant in contestants" role="presentation" style="padding: 8px!important"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulate(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.no}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
-								  </ul>
+                <div class="col-md-7">
+				
+				  <ul class="nav nav-tabs" role="tablist">
+					<li ng-repeat="portion in portions" role="presentation" ng-class="{'active': views.portionIndex == $index}"><a href="#portion{{portion.id}}" aria-controls="portion{{portion.id}}" role="tab" data-toggle="tab" ng-click="logIndex(this,$index,portion)">{{portion.description}}</a></li>
+				  </ul>				
+
+					<div class="tab-content">
+						<div ng-repeat="portion in portions" role="tabpanel" class="tab-pane" ng-class="{'active': views.portionIndex == $index}" id="portion{{portion.id}}">
+						<hr>				
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<div>
+									<div class="dropdown">
+									  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px!important;">
+										&nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;
+										<span class="caret"></span>
+									  </button><span style="padding-left: 10px;">{{portion.description}}</span>
+									  <ul class="dropdown-menu" role="menu">
+										<li ng-repeat="contestant in contestants" role="presentation" style="padding: 8px!important"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulate(contestant.id,portion.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.no}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
+									  </ul>
+									</div>
 								</div>
+								Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong><button type="button" class="btn btn-primary btn-sm pull-right" ng-click="scores(this)" ng-disabled="criteria.length == 0">{{(views.edit)?'Edit Scores':'Submit Scores'}}</button>
 							</div>
-							Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong><button type="button" class="btn btn-primary btn-sm pull-right" ng-click="scores(this)" ng-disabled="criteria.length == 0">{{(views.edit)?'Edit Scores':'Submit Scores'}}</button>
+							<div class="panel-body">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered table-hover">
+									<thead>
+										<tr><th>Criteria</th><th>Percentage</th><th>Score</th></tr>										
+									</thead>
+									<tbody>
+										<tr ng-repeat="criterion in criteria">
+											<td>{{criterion.description}}</td>
+											<td>{{criterion.percentage}}</td>
+											<td>
+												<input type="number" class="form-control" ng-disabled="views.edit" name="score" id="score{{$index}}" ng-model="criterion.score" min="1" max="{{criterion.percentage}}">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="panel-footer">
+								<!--<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>-->
+							</div>
+							</div>
 						</div>
-						<div class="panel-body">
-						<div class="table-responsive">
-							<table class="table table-striped table-bordered table-hover">
-								<thead>
-									<tr><th>Criteria</th><th>Percentage</th><th>Score</th></tr>										
-								</thead>
-								<tbody>
-									<tr ng-repeat="criterion in criteria">
-										<td>{{criterion.description}}</td>
-										<td>{{criterion.percentage}}</td>
-										<td>
-											<input type="number" class="form-control" ng-disabled="views.edit" name="score" id="score{{$index}}" ng-model="criterion.score" min="1" max="{{criterion.percentage}}">
-										</td>
-									</tr>
-								</tbody>
-							</table>
 						</div>
-						<div class="panel-footer">
-							<!--<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>-->
-						</div>
-						</div>
+						
 					</div>
+					
                     <hr />
                 </div>
-                <div class="col-md-6">
+				
+				
+                <div class="col-md-5">
 					<div class="panel panel-default">
-						<div class="panel-heading">Standing
+						<div class="panel-heading">Standing<span style="padding-left: 10px; font-weight: bold;">({{views.currentPortion}})</span>
 							<div class="pull-right" >
 								  <button class="btn btn-success btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" ng-click="refreshStanding(this)" style="padding: 5px 10px;">
 									<span class="glyphicon glyphicon-refresh"></span>

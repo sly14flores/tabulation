@@ -127,3 +127,246 @@
 [15-Sep-2017 12:11:38 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
 [15-Sep-2017 12:11:38 Asia/Manila] PHP Stack trace:
 [15-Sep-2017 12:11:38 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:13 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:13 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:13 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:15 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:15 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:15 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:17 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:17 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:17 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:19 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:19 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:19 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:21 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:21 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:21 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:23 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:23 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:23 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:25 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:25 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:27 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:27 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:29 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:29 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:29 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:31 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:31 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:31 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:33 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:33 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:33 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:35 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:35 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:35 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:37 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:37 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:37 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:39 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:39 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:41 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:41 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:43 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:43 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:43 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:45 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:45 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:45 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:47 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:47 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:47 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:49 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:49 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:49 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:51 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:51 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:51 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:53 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:53 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:53 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:55 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:55 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:55 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:57 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:57 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:57 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:41:59 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:41:59 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:41:59 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:01 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:01 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:03 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:03 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:03 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:05 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:05 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:05 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:07 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:07 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:07 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:09 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:09 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:11 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:11 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:11 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:13 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:13 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:13 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:15 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:15 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:15 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:17 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:17 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:17 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:19 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:19 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:19 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:21 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:21 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:21 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:23 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:23 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:23 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:25 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:25 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:25 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:27 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:27 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:29 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:29 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:29 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:31 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:31 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:31 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:33 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 106
+[13-Dec-2017 13:42:33 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 13:42:33 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 13:42:35 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT no, clus...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(93): pdo_db->getData('SELECT no, clus...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:35 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM c...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:37 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT no, clus...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(93): pdo_db->getData('SELECT no, clus...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:37 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM c...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:39 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT no, clus...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(93): pdo_db->getData('SELECT no, clus...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:39 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM c...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:41 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT no, clus...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(93): pdo_db->getData('SELECT no, clus...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:41 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM c...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:43 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT no, clus...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(93): pdo_db->getData('SELECT no, clus...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:43 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM c...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:45 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT no, clus...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(93): pdo_db->getData('SELECT no, clus...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:45 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM c...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:47 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT no, clus...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(93): pdo_db->getData('SELECT no, clus...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:47 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM c...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:49 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT no, clus...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(93): pdo_db->getData('SELECT no, clus...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:49 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM c...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:51 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT no, clus...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(93): pdo_db->getData('SELECT no, clus...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:51 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM c...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:53 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT no, clus...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(93): pdo_db->getData('SELECT no, clus...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:42:53 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tabulation.contestants' doesn't exist in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM c...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38

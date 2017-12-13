@@ -88,3 +88,48 @@ Stack trace:
 [19-Sep-2017 01:56:47 Asia/Manila] PHP Notice:  Undefined index: score in C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 112
 [19-Sep-2017 01:56:47 Asia/Manila] PHP Stack trace:
 [19-Sep-2017 01:56:47 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[13-Dec-2017 09:51:56 Asia/Manila] PHP Notice:  Undefined variable: judge in C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 21
+[13-Dec-2017 09:51:56 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 09:51:56 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[13-Dec-2017 11:28:09 Asia/Manila] PHP Notice:  Undefined index: contestant_id in C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 83
+[13-Dec-2017 11:28:09 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 11:28:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[13-Dec-2017 11:28:09 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND criteria_id = 1' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM s...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(84): pdo_db->getData('SELECT * FROM s...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 11:28:27 Asia/Manila] PHP Notice:  Undefined index: contestant_id in C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 83
+[13-Dec-2017 11:28:27 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 11:28:27 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[13-Dec-2017 11:28:27 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND criteria_id = 1' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT * FROM s...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(84): pdo_db->getData('SELECT * FROM s...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 11:47:25 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`tabulation`.`scores`, CONSTRAINT `scores_ibfk_3` FOREIGN KEY (`contestant_id`) REFERENCES `contestants` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION) in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:82
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(82): PDOStatement->execute(Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(86): pdo_db->insertData(Array)
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 82
+[13-Dec-2017 13:26:10 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.percentage FROM scores WHERE scores.contestant_id = 1 AND scores.judge_id = 1' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT *, (SELE...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(47): pdo_db->getData('SELECT *, (SELE...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:26:54 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.percentage FROM scores WHERE scores.contestant_id = 1 AND scores.judge_id = 1' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT *, (SELE...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(48): pdo_db->getData('SELECT *, (SELE...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 13:30:26 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(38): PDO->query('SELECT *, (SELE...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(48): pdo_db->getData('SELECT *, (SELE...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38

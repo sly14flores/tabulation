@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 11, 2017 at 11:16 AM
+-- Generation Time: Dec 13, 2017 at 01:40 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -67,6 +67,7 @@ INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `remarks`, `is_
 
 CREATE TABLE `criteria` (
   `id` int(10) NOT NULL,
+  `portion_id` int(10) NOT NULL,
   `description` varchar(100) NOT NULL,
   `percentage` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -75,11 +76,16 @@ CREATE TABLE `criteria` (
 -- Dumping data for table `criteria`
 --
 
-INSERT INTO `criteria` (`id`, `description`, `percentage`) VALUES
-(1, 'Tonal Quality (flexibility of voice, intonation & range)', 40),
-(2, 'Harmony (blending & balance, phrasing)', 30),
-(3, 'Mastery (dynamics, technique, interpretation)', 20),
-(4, 'Dapartment (general appearance, discipline & uniform)', 10);
+INSERT INTO `criteria` (`id`, `portion_id`, `description`, `percentage`) VALUES
+(1, 1, 'Facial Charm', 30),
+(2, 1, 'Poise and Confidence', 30),
+(3, 1, 'Wit and Intelligence', 30),
+(4, 1, 'Audience Impact', 10),
+(5, 2, 'Originality and Creativity', 40),
+(6, 2, 'Poise and Carriage', 30),
+(7, 2, 'Stage Presence', 20),
+(8, 2, 'Audience Impact', 10),
+(9, 3, 'Score', 100);
 
 -- --------------------------------------------------------
 
@@ -99,7 +105,27 @@ CREATE TABLE `judges` (
 --
 
 INSERT INTO `judges` (`id`, `last_name`, `first_name`, `remarks`) VALUES
-(1, 'Flores', 'Sly', NULL);
+(1, 'Flores', 'Sly', 'Chairman');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `portions`
+--
+
+CREATE TABLE `portions` (
+  `id` int(10) NOT NULL,
+  `description` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `portions`
+--
+
+INSERT INTO `portions` (`id`, `description`) VALUES
+(1, 'Ms Bilbilin PGLU'),
+(2, 'Most Creative Outfit'),
+(3, 'Best in Talent');
 
 -- --------------------------------------------------------
 
@@ -122,7 +148,7 @@ CREATE TABLE `preferences` (
 --
 
 INSERT INTO `preferences` (`id`, `title`, `on_going_contestant`, `minimum_score`, `maximum_score`, `signup_token`, `admin_token`) VALUES
-(1, 'Ilokano Chorale Finals', 0, 5, 10, 12345, '2017');
+(1, 'Ms PLUS 2017', 0, 5, 10, 12345, '2017');
 
 -- --------------------------------------------------------
 
@@ -137,28 +163,6 @@ CREATE TABLE `scores` (
   `criteria_id` int(10) NOT NULL,
   `score` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `scores`
---
-
-INSERT INTO `scores` (`id`, `judge_id`, `contestant_id`, `criteria_id`, `score`) VALUES
-(1, 1, 1, 1, 1),
-(2, 1, 1, 2, 1),
-(3, 1, 1, 3, 1),
-(4, 1, 1, 4, 1),
-(5, 1, 2, 1, 0),
-(6, 1, 2, 2, 0),
-(7, 1, 2, 3, 0),
-(8, 1, 2, 4, 0),
-(9, 1, 5, 1, 3),
-(10, 1, 5, 2, 3),
-(11, 1, 5, 3, 2),
-(12, 1, 5, 4, 2),
-(13, 1, 4, 1, 5),
-(14, 1, 4, 2, 5),
-(15, 1, 4, 3, 5),
-(16, 1, 4, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -181,18 +185,9 @@ CREATE TABLE `winners` (
 
 CREATE TABLE `winners_descriptions` (
   `id` int(10) NOT NULL,
+  `portion_id` int(10) NOT NULL,
   `description` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `winners_descriptions`
---
-
-INSERT INTO `winners_descriptions` (`id`, `description`) VALUES
-(1, 'Champion'),
-(2, 'First Runner-Up'),
-(3, 'Second Runner-Up'),
-(4, 'Third Runner-Up');
 
 --
 -- Indexes for dumped tables
@@ -215,12 +210,19 @@ ALTER TABLE `contestants`
 -- Indexes for table `criteria`
 --
 ALTER TABLE `criteria`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `portion_id` (`portion_id`);
 
 --
 -- Indexes for table `judges`
 --
 ALTER TABLE `judges`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `portions`
+--
+ALTER TABLE `portions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -249,7 +251,8 @@ ALTER TABLE `winners`
 -- Indexes for table `winners_descriptions`
 --
 ALTER TABLE `winners_descriptions`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `portion_id` (`portion_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -269,12 +272,17 @@ ALTER TABLE `contestants`
 -- AUTO_INCREMENT for table `criteria`
 --
 ALTER TABLE `criteria`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `judges`
 --
 ALTER TABLE `judges`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `portions`
+--
+ALTER TABLE `portions`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `preferences`
 --
@@ -284,7 +292,7 @@ ALTER TABLE `preferences`
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `winners`
 --
@@ -306,6 +314,12 @@ ALTER TABLE `consolation_prizes`
   ADD CONSTRAINT `consolation_prizes_ibfk_1` FOREIGN KEY (`contestant_id`) REFERENCES `contestants` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
+-- Constraints for table `criteria`
+--
+ALTER TABLE `criteria`
+  ADD CONSTRAINT `criteria_ibfk_1` FOREIGN KEY (`portion_id`) REFERENCES `portions` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
 -- Constraints for table `scores`
 --
 ALTER TABLE `scores`
@@ -318,6 +332,12 @@ ALTER TABLE `scores`
 --
 ALTER TABLE `winners`
   ADD CONSTRAINT `winners_ibfk_1` FOREIGN KEY (`contestant_id`) REFERENCES `contestants` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `winners_descriptions`
+--
+ALTER TABLE `winners_descriptions`
+  ADD CONSTRAINT `winners_descriptions_ibfk_1` FOREIGN KEY (`portion_id`) REFERENCES `portions` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
