@@ -2,129 +2,25 @@ var app = angular.module('dashboard', ['block-ui','bootstrap-notify','bootstrap-
 
 app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,bootstrapNotify,blockUI,bootstrapModal) {
 	
-	$scope.views = {};
+	$scope.views = {};	
+	$scope.views.portionIndex = 0;
 	
-	$scope.views.filter = 'Overall';
-	$scope.views.opt = {id: 0, name: 'Overall'};
-	$scope.views.tabulation = 0;
-	$scope.views.tabulationIndex = 0;
-	
-	$scope.views.declareWinners = false;
+	/*
+	** startup
+	*/
 	
 	$http({
 	  method: 'POST',
 	  url: 'controllers/dashboard.php?r=startup'
 	}).then(function mySucces(response) {
 
-		$scope.portions = response.data['portions'];
-		$scope.judges = response.data['judges'];
-		$scope.judges_list = response.data['judges_list'];		
-		$scope.contestants = response.data['contestants'];
+		$scope.judges_list = response.data['judges_list'];
 		$scope.contestants_list = response.data['contestants_list'];
-
-		// $scope.winners = response.data['winners'];
-		// $scope.consolations = response.data['consolations'];
+		$scope.portions = response.data['portions'];
 		
 	}, function myError(response) {
 		
 	});	
-
-	
-	/*
-	** standing
-	*/
-	
-	$http({
-	  method: 'POST',
-	  url: 'controllers/dashboard.php?r=standing',
-	  data: {id: 0}
-	}).then(function mySucces(response) {
-		
-		$scope.standing = response.data;
-	
-	}, function myError(response) {
-		
-	});
-	
-	/* $interval(function() {
-
-		$scope.loadStanding($scope.views.opt);
-	
-	},2000); */	
-	
-	$scope.loadStanding = function(opt) {
-		
-		$scope.views.declareWinners = true;
-		
-		if (opt.name == 'Overall') $scope.views.declareWinners = false;
-		
-		// blockUI.show();
-		$scope.views.opt = opt;
-		$scope.views.filter = opt.name;
-		
-		$http({
-		  method: 'POST',
-		  url: 'controllers/dashboard.php?r=standing',
-		  data: {id: opt.id}
-		}).then(function mySucces(response) {
-			
-			$scope.standing = response.data;
-			// blockUI.hide();
-		
-		}, function myError(response) {
-			
-		});		
-		
-	}
-	
-	$scope.tabulation = function(id) {
-		
-		$scope.views.tabulation = id;
-		
-		$http({
-		  method: 'POST',
-		  url: 'controllers/dashboard.php?r=tabulation',
-		  data: {id: id}
-		}).then(function mySucces(response) {
-			
-			$scope.views.contestant_no = "No. "+response.data['contestant']['no']+":";
-			$scope.views.contestant = response.data['contestant']['cluster_name'];
-			$scope.views.judges = response.data['judges'];
-		
-		}, function myError(response) {
-			
-		});		
-		
-	}
-	
-	$interval(function() {
-
-		if ($scope.views.tabulation != 0) $scope.tabulation($scope.views.tabulation);
-	
-	},2000);
-	
-	$scope.declareWinners = function() {
-		
-		bootstrapModal.confirm($scope,'Confirmation','Are you sure you want to declare winners?',function() { winners(); },function() {});		
-		
-		function winners() {
-			
-			$http({
-			  method: 'POST',
-			  url: 'controllers/dashboard.php?r=winners',
-			  data: $scope.standing
-			}).then(function mySucces(response) {
-				
-				$scope.winners = response.data['winners'];
-				$scope.consolations = response.data['consolations'];
-			
-			}, function myError(response) {
-				
-			});	
-
-		};
-
-	};
 	
 	$scope.editContestant = function(contestant) {
 		
@@ -224,32 +120,28 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 			  data: {id: id, remarks: $scope.judge_status.remarks}
 			}).then(function mySucces(response) {
 				
-		$scope.judges_list = response.data['judges_list'];
+			$scope.judges_list = response.data['judges_list'];
 			
 			}, function myError(response) {
 				
 			});				
 			
-		}
+		};
+		
+	};
+	
+	$scope.logIndex = function(scope,index,portion) {
+		
+		scope.views.portionIndex = index;
+		// if (scope.views.currentContestant) scope.tabulate(scope.views.currentContestant,portion.id);
+		// scope.views.currentPortion = portion.description;
+		// scope.views.currentPortionId = portion.id;
+		
+		// $timeout(function() {
+			// scope.refreshStanding(scope);
+			// scope.portionContestants();
+		// },300);
 		
 	};	
-	
-	$scope.printWinners = function() {
-		
-		window.open("reports/winners.php");
-		
-	};
-	
-	$scope.printConsolations = function() {
-
-		window.open("reports/consolation-prizes.php");	
-	
-	};
-	
-	$scope.logIndex = function(scope,index) {
-		
-		scope.views.tabulationIndex = index;
-		
-	};
 
 });	

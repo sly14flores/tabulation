@@ -380,3 +380,111 @@ Stack trace:
 [13-Dec-2017 16:01:23 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
 [13-Dec-2017 16:01:23 Asia/Manila] PHP   2. pdo_db->updateData() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:172
 [13-Dec-2017 16:01:23 Asia/Manila] PHP   3. PDOStatement->execute() C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:175
+[13-Dec-2017 18:11:30 Asia/Manila] PHP Notice:  Undefined variable: portion_id in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 39
+[13-Dec-2017 18:11:30 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 18:11:30 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 19:19:31 Asia/Manila] PHP Warning:  array_multisort(): Argument #1 is expected to be an array or a sort flag in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 50
+[13-Dec-2017 19:19:31 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 19:19:31 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 19:19:31 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:50
+[13-Dec-2017 19:19:31 Asia/Manila] PHP Warning:  array_multisort(): Argument #1 is expected to be an array or a sort flag in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 50
+[13-Dec-2017 19:19:31 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 19:19:31 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 19:19:31 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:50
+[13-Dec-2017 19:19:31 Asia/Manila] PHP Warning:  array_multisort(): Argument #1 is expected to be an array or a sort flag in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 50
+[13-Dec-2017 19:19:31 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 19:19:31 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 19:19:31 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:50
+[13-Dec-2017 19:19:31 Asia/Manila] PHP Warning:  array_multisort(): Argument #1 is expected to be an array or a sort flag in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 50
+[13-Dec-2017 19:19:31 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 19:19:32 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 19:19:32 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:50
+[13-Dec-2017 19:19:32 Asia/Manila] PHP Warning:  array_multisort(): Argument #1 is expected to be an array or a sort flag in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 50
+[13-Dec-2017 19:19:32 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 19:19:32 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 19:19:32 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:50
+[13-Dec-2017 19:19:32 Asia/Manila] PHP Warning:  array_multisort(): Argument #1 is expected to be an array or a sort flag in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 50
+[13-Dec-2017 19:19:32 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 19:19:32 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 19:19:32 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:50
+[13-Dec-2017 20:20:42 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 85
+[13-Dec-2017 20:20:42 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:20:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:20:42 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:85
+[13-Dec-2017 20:20:42 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 85
+[13-Dec-2017 20:20:42 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:20:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:20:42 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:85
+[13-Dec-2017 20:20:42 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 85
+[13-Dec-2017 20:20:42 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:20:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:20:42 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:85
+[13-Dec-2017 20:20:42 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 85
+[13-Dec-2017 20:20:42 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:20:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:20:42 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:85
+[13-Dec-2017 20:20:42 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 85
+[13-Dec-2017 20:20:42 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:20:42 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:20:42 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:85
+[13-Dec-2017 20:21:09 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 86
+[13-Dec-2017 20:21:09 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:21:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:21:09 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:86
+[13-Dec-2017 20:21:09 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 86
+[13-Dec-2017 20:21:09 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:21:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:21:09 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:86
+[13-Dec-2017 20:21:09 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 86
+[13-Dec-2017 20:21:09 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:21:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:21:09 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:86
+[13-Dec-2017 20:21:09 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 86
+[13-Dec-2017 20:21:09 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:21:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:21:09 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:86
+[13-Dec-2017 20:21:09 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 86
+[13-Dec-2017 20:21:09 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:21:09 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:21:09 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:86
+[13-Dec-2017 20:23:04 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 86
+[13-Dec-2017 20:23:04 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:23:04 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:23:04 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:86
+[13-Dec-2017 20:23:04 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 86
+[13-Dec-2017 20:23:04 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:23:04 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:23:04 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:86
+[13-Dec-2017 20:23:04 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 86
+[13-Dec-2017 20:23:04 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:23:04 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:23:04 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:86
+[13-Dec-2017 20:23:04 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 86
+[13-Dec-2017 20:23:04 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:23:04 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:23:04 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:86
+[13-Dec-2017 20:23:04 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 86
+[13-Dec-2017 20:23:04 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:23:04 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:23:04 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:86
+[13-Dec-2017 20:24:33 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 85
+[13-Dec-2017 20:24:33 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:24:33 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:24:33 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:85
+[13-Dec-2017 20:24:33 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 85
+[13-Dec-2017 20:24:33 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:24:33 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:24:33 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:85
+[13-Dec-2017 20:24:33 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 85
+[13-Dec-2017 20:24:33 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:24:33 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:24:33 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:85
+[13-Dec-2017 20:24:33 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 85
+[13-Dec-2017 20:24:33 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:24:33 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:24:33 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:85
+[13-Dec-2017 20:24:33 Asia/Manila] PHP Warning:  array_multisort(): Array sizes are inconsistent in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 85
+[13-Dec-2017 20:24:33 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 20:24:33 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 20:24:33 Asia/Manila] PHP   2. array_multisort() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:85
+[13-Dec-2017 20:33:09 Asia/Manila] PHP Parse error:  syntax error, unexpected ';' in C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php on line 95

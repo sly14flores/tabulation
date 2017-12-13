@@ -174,7 +174,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 			scope.portionContestants();
 		},300);
 		
-	};	
+	};
 	
 	$scope.portionContestants = function() {
 		

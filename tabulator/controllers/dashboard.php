@@ -14,22 +14,93 @@ switch ($_GET['r']) {
 	$con = new pdo_db();
 	
 	$portions = $con->getData("SELECT * FROM portions");
-	$portion_id = (count($portions ))?$portions[0]['id']:0;	
 	
-	# for dropdown
-	$judges = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name FROM judges");
-	# for table
+	# for tables
 	$judges_list = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name, remarks FROM judges");
-	# for dropdown
-	$_contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");		
-	$contestants = portionContestants($_contestants,$portion_id);	
-	# for table
-	$contestants_list = $con->getData("SELECT id, IF(no=0,'',no) cn, cluster_name, IF(is_active=1,'Yes','No') participated FROM contestants");		
+	$contestants_list = $con->getData("SELECT id, IF(no=0,'',no) cn, cluster_name, IF(is_active=1,'Yes','No') participated FROM contestants");	
+	$_contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
 	
-	// $winners = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM winners");
-	// $consolations = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
+	foreach ($portions as $i => $portion) {
+		
+		$portions[$i]['judges'] = [];
+		$portions[$i]['overall'] = [];		
+		
+		# judges
+		foreach ($judges_list as $judge) {
+			
+			$contestants = portionContestants($_contestants,$portion['id']);
+			$contestants_overall = $contestants;
+			
+			$rank_per_judge = [];		
+			foreach ($contestants as $ii => $contestant) {
+				
+				$scores = $con->getData("SELECT (SELECT criteria.description FROM criteria WHERE criteria.id = scores.criteria_id) description, (SELECT criteria.percentage FROM criteria WHERE criteria.id = scores.criteria_id) percentage, scores.score FROM scores LEFT JOIN criteria ON scores.criteria_id = criteria.id WHERE scores.contestant_id = $contestant[id] AND scores.judge_id = $judge[id] AND criteria.portion_id = $portion[id]");
+				$contestants[$ii]['scores'] = $scores;
+				$total_scores = 0;
+				foreach ($scores as $s) {
+					$total_scores += $s['score'];
+				};
+				$contestants[$ii]['total_scores'] = $total_scores;
+				
+				$rank_per_judge[] = $total_scores;
+				
+			};						
+					
+			array_multisort($rank_per_judge, SORT_DESC, $contestants);	
+			
+			foreach ($contestants as $ii => $contestant) {
+				
+				$contestants[$ii]['rank'] = $ii+1;
+				
+			}			
+			
+			$judge['contestants'] = $contestants;	
+			
+			$portions[$i]['judges'][] = $judge;			
+			
+		};
+		#
+		
+		# overall
+		$rank_overall = [];		
+		foreach ($contestants_overall as $ii => $contestant_overall) {
+			
+			$contestant_overall['overall_total_scores'] = 0;
+			
+			foreach ($portions[$i]['judges'] as $judge) {
+				
+				foreach ($judge['contestants'] as $contestant_scores) {
+					
+					if ($contestant_scores['id'] == $contestant_overall['id']) {
+						
+						$contestant_overall['overall_total_scores'] += $contestant_scores['total_scores'];						
+						
+					};
+					
+				};
+				
 
-	$response = array("portions"=>$portions,"judges"=>$judges,"contestants"=>$contestants,"contestants_list"=>$contestants_list,"judges_list"=>$judges_list);
+
+			};			
+			
+			$rank_overall[] = $contestant_overall['overall_total_scores'];			
+			
+			$portions[$i]['overall'][] = $contestant_overall;
+
+		};
+		
+		array_multisort($rank_overall, SORT_DESC, $portions[$i]['overall']);
+
+		foreach ($portions[$i]['overall'] as $ii => $overall) {
+			
+			$portions[$i]['overall'][$ii]['overall_rank'] = $ii+1;
+			
+		};
+		#
+
+	};
+	
+	$response = array("portions"=>$portions,"contestants_list"=>$contestants_list,"judges_list"=>$judges_list);
 
 	echo json_encode($response);
 	

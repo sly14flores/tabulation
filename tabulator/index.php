@@ -110,108 +110,9 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 								</tbody>									
 							</table>
 						</div>							
-					</div>				
-					<div class="panel panel-default">
-						<div class="panel-heading">Standing: <strong>{{views.filter}}</strong>
-							<div class="pull-right" >
-								<div class="dropdown">
-								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px 10px;">
-									<span class="glyphicon glyphicon-user"></span>
-									<span class="caret"></span>
-								  </button>
-								  <ul class="dropdown-menu" role="menu">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="loadStanding({id: 0, name: 'Overall'})">Overall</a></li>
-									<li ng-repeat="judge in judges" role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="loadStanding(judge)">{{judge.name}}</a></li>
-								  </ul>
-								</div>
-							</div>						
-						</div>
-						<div class="panel-body">
-						<div class="table-responsive">
-							<table class="table table-striped table-bordered table-hover">
-								<thead>
-									<tr><th>#</th><th>Contestant</th><th>Score</th><th>Rank</th></tr>										
-								</thead>
-								<tbody>
-									<tr ng-repeat="contestant in standing">
-										<td>{{contestant.no}}</td>
-										<td>{{contestant.name}}</td>
-										<td>{{contestant.score}}</td>
-										<td>{{$index+1}}</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!--<div class="panel-footer">
-							<a href="#" class="pull-right btn btn-primary" ng-disabled="views.declareWinners" ng-click="declareWinners()">Declare Winners</a>
-							<div style="clear: both;"></div>
-						</div>-->
-						</div>
 					</div>
-					<!--<div class="panel panel-default">
-						<div class="panel-heading">
-							<strong>Winners</strong>
-							<div class="pull-right" >
-								<div class="dropdown">
-								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px 10px;">
-									<span class="glyphicon glyphicon-cog"></span>
-									<span class="caret"></span>
-								  </button>
-								  <ul class="dropdown-menu" role="menu">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="printWinners()">Print</a></li>
-								  </ul>
-								</div>
-							</div>							
-						</div>
-						<div class="panel-body">
-							<table class="table table-striped table-bordered table-hover">
-								<thead>
-									<tr><th>No</th><th>Cluster Name</th><th>Score</th><th>Place</th></tr>										
-								</thead>
-								<tbody>
-									<tr ng-repeat="winner in winners">
-										<td>{{winner.no}}</td>
-										<td>{{winner.name}}</td>
-										<td>{{winner.overall_score}}</td>
-										<td>{{winner.place}}</td>
-									</tr>
-								</tbody>									
-							</table>
-						</div>							
-					</div>-->
-					<!--<div class="panel panel-default">
-						<div class="panel-heading">
-							<strong>Consolation Prize</strong>
-							<div class="pull-right" >
-								<div class="dropdown">
-								  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px 10px;">
-									<span class="glyphicon glyphicon-cog"></span>
-									<span class="caret"></span>
-								  </button>
-								  <ul class="dropdown-menu" role="menu">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="printConsolations()">Print</a></li>
-								  </ul>
-								</div>
-							</div>							
-						</div>
-						<div class="panel-body">
-							<table class="table table-striped table-bordered table-hover">
-								<thead>
-									<tr><th>No</th><th>Cluster Name</th><th>Score</th></tr>										
-								</thead>
-								<tbody>
-									<tr ng-repeat="consolation in consolations">
-										<td>{{consolation.no}}</td>
-										<td>{{consolation.name}}</td>
-										<td>{{consolation.overall_score}}</td>
-									</tr>
-								</tbody>									
-							</table>
-						</div>							
-					</div>-->
                 </div>		
-                <div class="col-md-6">
-				
+                <div class="col-md-6">				
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<strong>Judges</strong>							
@@ -234,82 +135,68 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 								</tbody>									
 							</table>
 						</div>							
-					</div>				
-					
-					<ul class="nav nav-tabs" role="tablist">
-						<li ng-repeat="portion in portions" role="presentation" ng-class="{'active': views.portionIndex == $index}"><a href="#portion{{portion.id}}" aria-controls="portion{{portion.id}}" role="tab" data-toggle="tab" ng-click="logIndex(this,$index,portion)">{{portion.description}}</a></li>
-					</ul>					
-					
-					<div class="tab-content">
-						<div ng-repeat="portion in portions" role="tabpanel" class="tab-pane" ng-class="{'active': views.portionIndex == $index}" id="portion{{portion.id}}">
-							<hr>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<div class="pull-left" >
-										<div class="dropdown">
-										  <button class="btn btn-success dropdown-toggle btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" style="padding: 5px 10px;">
-											<span class="glyphicon glyphicon-user"></span>
-											<span class="caret"></span>
-										  </button>
-										  <ul class="dropdown-menu" role="menu">
-											<li ng-repeat="contestant in contestants" role="presentation" style="padding: 10px;"><a role="menuitem" tabindex="-1" href="javascript:;" ng-click="tabulation(contestant.id)"><span style="border: 0!important;" ng-show="contestant.no != 0?true:false">#{{contestant.no}}:</span>&nbsp;&nbsp;<strong>{{contestant.cluster_name}}</strong></a></li>
-										  </ul>
-										</div>
-									</div>
-								&nbsp;Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong>							
-								</div>
-								<div class="panel-body">
-								<div class="table-responsive">
-									<div>
-
-									  <!-- Nav tabs -->
-									  <ul class="nav nav-tabs" role="tablist">
-										<li ng-repeat="judge in views.judges" role="presentation" ng-class="{'active': views.tabulationIndex == $index}"><a href="#judge{{$index}}" aria-controls="judge{{$index}}" role="tab" data-toggle="tab" ng-click="logIndex(this,$index)">{{judge.name}}</a></li>
-									  </ul>
-
-									  <!-- Tab panes -->
-									  <div class="tab-content">
-										<hr>
-										<div ng-repeat="judge in views.judges" role="tabpanel" class="tab-pane" ng-class="{'active': views.tabulationIndex == $index}" id="judge{{$index}}">
-											<div class="panel panel-primary">
-												<div class="panel-heading">
-													{{judge.name}}
-												</div>
-												<div class="panel-body">
-													<table class="table table-striped table-bordered table-hover">
-														<thead>
-															<tr><th>Criteria</th><th>Percentage</th><th>Score</th></tr>										
-														</thead>
-														<tbody>
-															<tr ng-repeat="score in judge.scores">
-																<td>{{score.description}}</td>
-																<td>{{score.percentage}}</td>
-																<td>{{score.score}}</td>
-															</tr>
-														</tbody>									
-													</table>
-												</div>
-												<div class="panel-footer">
-													Total: <strong>{{judge.total_score}}</strong>
-												</div>								
-											</div>								
-										</div>
-									  </div>
-
-									</div>							
-
-									
-								</div>
-								<!--<div class="panel-footer">
-									<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>
-								</div>-->
-								</div>
-							</div>
-						</div>
-					</div>					
-					
+					</div>
                 </div>
             </div>
+			<hr>
+			<div class="row">
+                <div class="col-md-12">
+				  <ul class="nav nav-tabs" role="tablist">
+					<li ng-repeat="portion in portions" role="presentation" ng-class="{'active': views.portionIndex == $index}"><a href="#portion{{portion.id}}" aria-controls="portion{{portion.id}}" role="tab" data-toggle="tab" ng-click="logIndex(this,$index,portion)">{{portion.description}}</a></li>
+				  </ul>
+				  <div class="tab-content">
+					<div ng-repeat="portion in portions" role="tabpanel" class="tab-pane" ng-class="{'active': views.portionIndex == $index}" id="portion{{portion.id}}">
+						<hr>
+						<div>
+							<h4>Overall</h4>
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th style="width: 50px;">#</th><th>Contestant</th><th>Score</th><th>Rank</th>
+									</tr>								
+								</thead>
+								<tbody ng-repeat="o in portion.overall">
+									<tr>
+										<td>{{o.no}}</td><td>{{o.cluster_name}}</td><td>{{o.overall_total_scores}}</td><td><strong>{{o.overall_rank}}</strong></td>
+									</tr>
+								</tbody>
+							</table>
+							<hr>
+						</div>
+						<div ng-repeat="jud in portion.judges">
+							<h4>{{jud.name}}</h4>
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th style="width: 50px;">#</th><th>Contestant</th><th>Score</th><th>Rank</th><th style="width: 500px;">Score Details</th>
+									</tr>
+								</thead>
+								<tbody ng-repeat="con in jud.contestants">
+									<tr>
+										<td>{{con.no}}</td><td>{{con.cluster_name}}</td><td>{{con.total_scores}}</td><td><strong>{{con.rank}}</strong></td>
+										<td>
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>Criteria</th><th>Percentage</th><th>Score</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr ng-repeat="score in con.scores">
+														<td>{{score.description}}</td><td>{{score.percentage}}</td><td>{{score.score}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<hr>
+						</div>
+					</div>
+				  </div>
+				</div>
+			</div>
         </div>
     </div>
     <!-- CONTENT-WRAPPER SECTION END-->
