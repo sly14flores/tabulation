@@ -100,7 +100,7 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
                 <div class="col-md-7">
 				
 				  <ul class="nav nav-tabs" role="tablist">
-					<li ng-repeat="portion in portions" role="presentation" ng-class="{'active': views.portionIndex == $index}"><a href="#portion{{portion.id}}" aria-controls="portion{{portion.id}}" role="tab" data-toggle="tab" ng-click="logIndex(this,$index,portion)">{{portion.description}}</a></li>
+					<li ng-repeat="portion in portions" role="presentation" ng-class="{'active': views.portionIndex == $index}"><a href="#portion{{portion.id}}" aria-controls="portion{{portion.id}}" role="tab" data-toggle="tab" ng-click="logIndex($index,portion)">{{portion.description}}</a></li>
 				  </ul>				
 
 					<div class="tab-content">

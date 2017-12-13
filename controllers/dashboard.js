@@ -161,21 +161,24 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		};
 		
 	}
-	
-	$scope.logIndex = function(scope,index,portion) {
+
+	$scope.logIndex = function(index,portion) {				
 		
-		scope.views.portionIndex = index;
-		if (scope.views.currentContestant) scope.tabulate(scope.views.currentContestant,portion.id);
-		scope.views.currentPortion = portion.description;
-		scope.views.currentPortionId = portion.id;
+		$scope.views.portionIndex = index;
+		$scope.views.currentPortion = portion.description;
+		$scope.views.currentPortionId = portion.id;
 		
 		$timeout(function() {
-			scope.refreshStanding(scope);
-			scope.portionContestants();
+			$scope.refreshStanding($scope);
+			$scope.portionContestants();
 		},300);
 		
+		$scope.views.contestant_no = '';			
+		$scope.views.contestant = '';
+		$scope.criteria = [];
+		
 	};
-	
+
 	$scope.portionContestants = function() {
 		
 		$http({
