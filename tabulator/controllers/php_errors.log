@@ -370,3 +370,13 @@ Stack trace:
 #1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php(38): pdo_db->getData('SELECT * FROM c...')
 #2 {main}
   thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 16:01:08 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 175
+[13-Dec-2017 16:01:08 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 16:01:08 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 16:01:08 Asia/Manila] PHP   2. pdo_db->updateData() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:172
+[13-Dec-2017 16:01:08 Asia/Manila] PHP   3. PDOStatement->execute() C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:175
+[13-Dec-2017 16:01:23 Asia/Manila] PHP Notice:  Array to string conversion in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 175
+[13-Dec-2017 16:01:23 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 16:01:23 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:0
+[13-Dec-2017 16:01:23 Asia/Manila] PHP   2. pdo_db->updateData() C:\Users\sly\Desktop\UwAmp310\www\tabulation\tabulator\controllers\dashboard.php:172
+[13-Dec-2017 16:01:23 Asia/Manila] PHP   3. PDOStatement->execute() C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:175

@@ -20,7 +20,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		6: true
 	};
 	
-	$scope.criteria = [];
+	$scope.criteria = [];	
 	
 	$http({
 	  method: 'POST',
@@ -171,9 +171,26 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 		$timeout(function() {
 			scope.refreshStanding(scope);
+			scope.portionContestants();
 		},300);
 		
 	};	
+	
+	$scope.portionContestants = function() {
+		
+		$http({
+		  method: 'POST',
+		  url: 'controllers/dashboard.php?r=portions_contestants',
+		  data: {portion_id: $scope.views.currentPortionId}
+		}).then(function mySucces(response) {
+
+			$scope.contestants = response.data;
+
+		}, function myError(response) {
+
+		});			
+		
+	};
 	
 	$scope.logout = function() {
 		

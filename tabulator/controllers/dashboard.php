@@ -1,6 +1,7 @@
 <?php
 
 require_once '../../db.php';
+require_once '../../classes.php';
 
 session_start();
 
@@ -12,16 +13,25 @@ switch ($_GET['r']) {
 	
 	$con = new pdo_db();
 	
-	$judges = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name FROM judges");
-	$contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");		
+	$portions = $con->getData("SELECT * FROM portions");
+	$portion_id = (count($portions ))?$portions[0]['id']:0;	
 	
-	$winners = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM winners");
-	$consolations = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
+	# for dropdown
+	$judges = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name FROM judges");
+	# for table
+	$judges_list = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name, remarks FROM judges");
+	# for dropdown
+	$_contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");		
+	$contestants = portionContestants($_contestants,$portion_id);	
+	# for table
+	$contestants_list = $con->getData("SELECT id, IF(no=0,'',no) cn, cluster_name, IF(is_active=1,'Yes','No') participated FROM contestants");		
+	
+	// $winners = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM winners");
+	// $consolations = $con->getData("SELECT (SELECT no FROM contestants WHERE id = contestant_id) no, (SELECT cluster_name FROM contestants WHERE id = contestant_id) name, overall_score, place FROM consolation_prizes");
 
-	$contestants_list = $con->getData("SELECT id, IF(no=0,'',no) cn, cluster_name, IF(is_active=1,'Yes','No') participated FROM contestants");	
-	$judges_list = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name, remarks FROM judges");	
+	$response = array("portions"=>$portions,"judges"=>$judges,"contestants"=>$contestants,"contestants_list"=>$contestants_list,"judges_list"=>$judges_list);
 
-	echo json_encode(array("judges"=>$judges,"contestants"=>$contestants,"winners"=>$winners,"consolations"=>$consolations,"contestants_list"=>$contestants_list,"judges_list"=>$judges_list));
+	echo json_encode($response);
 	
 	break;	
 	
@@ -146,8 +156,21 @@ switch ($_GET['r']) {
 
 	$con = new pdo_db("contestants");
 
-	$contestant_status = $con->getData("SELECT no, is_active participated FROM contestants WHERE id = $_POST[id]");
+	$contestant_status = $con->getData("SELECT no, is_active participated, portions FROM contestants WHERE id = $_POST[id]");
 	
+	$contestant_portions = ($contestant_status[0]['portions'] != NULL)?explode(",",$contestant_status[0]['portions']):[];
+	
+	$portions = [];
+	$_portions = $con->getData("SELECT * FROM portions");
+	
+	foreach ($_portions as $key => $_p) {
+
+		$portions[] = participantOf($_p,$contestant_portions);
+
+	};
+	
+	$contestant_status[0]['portions'] = $portions;
+
 	echo json_encode($contestant_status[0]);
 	
 	break;
@@ -155,6 +178,11 @@ switch ($_GET['r']) {
 	case "contestant":
 	
 	$con = new pdo_db("contestants");
+	
+	$portions = $_POST['portions'];	
+	unset($_POST['portions']);
+	
+	$_POST['portions'] = concatPortions($portions);
 	
 	$contestant = $con->updateData($_POST,'id');
 	
@@ -187,5 +215,37 @@ switch ($_GET['r']) {
 	break;
 	
 }
+
+function participantOf($_p,$contestant_portions) {
+	
+	$portion = $_p;
+	$portion['value'] = false;
+	
+	foreach ($contestant_portions as $cp) {
+		
+		if ($cp == $_p['id']) $portion['value'] = true;
+		
+	}
+	
+	return $portion;
+	
+};
+
+function concatPortions($portions) {
+
+	$portions_c = "";
+
+	foreach ($portions as $i => $portion) {
+		
+		if ($portion['value']) {
+			$portions_c .= $portion['id'].",";
+		}
+		
+	};
+	$portions_c = substr($portions_c,0,strlen($portions_c)-1);
+	
+	return $portions_c;
+	
+};
 
 ?>

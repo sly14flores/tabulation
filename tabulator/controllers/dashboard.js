@@ -16,12 +16,14 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 	  url: 'controllers/dashboard.php?r=startup'
 	}).then(function mySucces(response) {
 
+		$scope.portions = response.data['portions'];
 		$scope.judges = response.data['judges'];
+		$scope.judges_list = response.data['judges_list'];		
 		$scope.contestants = response.data['contestants'];
 		$scope.contestants_list = response.data['contestants_list'];
-		$scope.judges_list = response.data['judges_list'];
-		$scope.winners = response.data['winners'];
-		$scope.consolations = response.data['consolations'];
+
+		// $scope.winners = response.data['winners'];
+		// $scope.consolations = response.data['consolations'];
 		
 	}, function myError(response) {
 		
@@ -44,11 +46,11 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 	});
 	
-	$interval(function() {
+	/* $interval(function() {
 
 		$scope.loadStanding($scope.views.opt);
 	
-	},2000);	
+	},2000); */	
 	
 	$scope.loadStanding = function(opt) {
 		
@@ -124,7 +126,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 
 	};
 	
-	$scope.editContestant = function(id) {
+	$scope.editContestant = function(contestant) {
 		
 		$scope.contestant_status = {};
 		
@@ -143,15 +145,24 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 			frm += '<select class="form-control" name="participated" ng-model="contestant_status.participated" ng-options="x for (x,y) in views.contestant_status track by y">';
 			frm += '<option value="">-</option>';
 			frm += '</select>';
-			frm += '</div>';			
+			frm += '</div>';
+			frm += '<div class="form-group">';
+			
+			frm += '<div class="checkbox" ng-repeat="portion in contestant_status.portions">';
+			frm += '<label>';
+			frm += '<input type="checkbox" ng-model="portion.value"> {{portion.description}}';
+			frm += '</label>';
+			frm += '</div>';					
+
+			frm += '</div>';
 			frm += '</form>';
 			
-		bootstrapModal.confirm($scope,'Contestant',frm,function() { contestantStatus();  },function() {});		
+		bootstrapModal.confirm($scope,contestant.cluster_name,frm,function() { contestantStatus();  },function() {});		
 			
 		$http({
 		  method: 'POST',
 		  url: 'controllers/dashboard.php?r=contestant_status',
-		  data: {id: id}
+		  data: {id: contestant.id}
 		}).then(function mySucces(response) {
 			
 			$timeout(function() { $scope.contestant_status = response.data; },500);
@@ -165,7 +176,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 			$http({
 			  method: 'POST',
 			  url: 'controllers/dashboard.php?r=contestant',
-			  data: {id: id, no: $scope.contestant_status.no, is_active: $scope.contestant_status.participated}
+			  data: {id: contestant.id, no: $scope.contestant_status.no, is_active: $scope.contestant_status.participated, portions: $scope.contestant_status.portions}
 			}).then(function mySucces(response) {
 				
 				$scope.contestants_list = response.data['contestants_list'];

@@ -4,6 +4,7 @@ header("content-type: application/json; charset=utf-8");
 header("access-control-allow-origin: *");
 
 require_once '../db.php';
+require_once '../classes.php';
 
 session_start();
 
@@ -14,13 +15,16 @@ switch ($_GET['r']) {
 	case "startup":
 	
 	$con = new pdo_db();
-	$judge_q = $con->getData("SELECT CONCAT(first_name, ' ', last_name) name FROM judges WHERE id = $_SESSION[judge_id]");
-	
-	$contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
-	
-	$judge = (count($judge_q))?$judge_q[0]:array("name"=>"");
 	
 	$portions = $con->getData("SELECT * FROM portions");
+	$portion_id = (count($portions ))?$portions[0]['id']:0;
+	
+	$judge_q = $con->getData("SELECT CONCAT(first_name, ' ', last_name) name FROM judges WHERE id = $_SESSION[judge_id]");
+	
+	$_contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
+	$contestants = portionContestants($_contestants,$portion_id);
+	
+	$judge = (count($judge_q))?$judge_q[0]:array("name"=>"");	
 	
 	$response = array("judge"=>$judge,"contestants"=>$contestants,"portions"=>$portions);
 	
@@ -32,7 +36,8 @@ switch ($_GET['r']) {
 	
 	$con = new pdo_db();
 
-	$contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
+	$_contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
+	$contestants = portionContestants($_contestants,$_POST['portion_id']);
 
 	$standing = [];
 	foreach ($contestants as $key => $value) {
@@ -118,9 +123,19 @@ switch ($_GET['r']) {
 			$score = 0;			
 		}
 		$score = $con->query("UPDATE scores SET score = $score WHERE id = ".$_POST[$key]['id']);
-	}
+	}	
 	
+	break;
 	
+	case "portions_contestants":
+	
+		$con = new pdo_db();	
+	
+		$_contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
+		$contestants = portionContestants($_contestants,$_POST['portion_id']);
+		
+		echo json_encode($contestants);
+		
 	break;
 	
 }

@@ -138,9 +138,9 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 									</tbody>
 								</table>
 							</div>
-							<div class="panel-footer">
-								<!--<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>-->
-							</div>
+							<!--<div class="panel-footer">
+								<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>
+							</div>-->
 							</div>
 						</div>
 						</div>
@@ -176,9 +176,9 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 								</tbody>
 							</table>
 						</div>
-						<div class="panel-footer">
-							<!--<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>-->
-						</div>
+						<!--<div class="panel-footer">
+							<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>
+						</div>-->
 						</div>
 					</div>					
                 </div>

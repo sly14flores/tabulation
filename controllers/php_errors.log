@@ -133,3 +133,9 @@ Stack trace:
 #1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(48): pdo_db->getData('SELECT *, (SELE...')
 #2 {main}
   thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 38
+[13-Dec-2017 16:31:56 Asia/Manila] PHP Notice:  Undefined variable: portion_id in C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 133
+[13-Dec-2017 16:31:56 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 16:31:56 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[13-Dec-2017 16:31:59 Asia/Manila] PHP Notice:  Undefined variable: portion_id in C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 133
+[13-Dec-2017 16:31:59 Asia/Manila] PHP Stack trace:
+[13-Dec-2017 16:31:59 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
