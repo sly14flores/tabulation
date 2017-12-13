@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 13, 2017 at 01:40 PM
+-- Generation Time: Dec 13, 2017 at 05:14 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -44,6 +44,7 @@ CREATE TABLE `contestants` (
   `no` int(10) NOT NULL DEFAULT '0',
   `cluster_name` varchar(100) NOT NULL,
   `leader` varchar(100) DEFAULT NULL,
+  `portions` varchar(100) DEFAULT NULL,
   `remarks` varchar(100) DEFAULT NULL,
   `is_active` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -52,12 +53,12 @@ CREATE TABLE `contestants` (
 -- Dumping data for table `contestants`
 --
 
-INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `remarks`, `is_active`) VALUES
-(1, 0, 'Bauang', NULL, NULL, 1),
-(2, 0, 'San Fernando City', NULL, NULL, 1),
-(3, 0, 'Naguillan', NULL, NULL, 1),
-(4, 0, 'Balaoan', NULL, NULL, 1),
-(5, 0, 'Santo Tomas', NULL, NULL, 1);
+INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `portions`, `remarks`, `is_active`) VALUES
+(1, 1, 'Bauang', NULL, '1', NULL, 1),
+(2, 0, 'San Fernando City', NULL, '1', NULL, 1),
+(3, 0, 'Naguillan', NULL, '', NULL, 1),
+(4, 0, 'Balaoan', NULL, '', NULL, 1),
+(5, 0, 'Santo Tomas', NULL, '', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -163,6 +164,30 @@ CREATE TABLE `scores` (
   `criteria_id` int(10) NOT NULL,
   `score` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `scores`
+--
+
+INSERT INTO `scores` (`id`, `judge_id`, `contestant_id`, `criteria_id`, `score`) VALUES
+(1, 1, 2, 1, 30),
+(2, 1, 2, 2, 0),
+(3, 1, 2, 3, 0),
+(4, 1, 2, 4, 0),
+(5, 1, 2, 5, 0),
+(6, 1, 2, 6, 0),
+(7, 1, 2, 7, 0),
+(8, 1, 2, 8, 0),
+(9, 1, 2, 9, 0),
+(10, 1, 4, 9, 78),
+(11, 1, 4, 5, 0),
+(12, 1, 4, 6, 0),
+(13, 1, 4, 7, 0),
+(14, 1, 4, 8, 0),
+(15, 1, 4, 1, 0),
+(16, 1, 4, 2, 0),
+(17, 1, 4, 3, 0),
+(18, 1, 4, 4, 0);
 
 -- --------------------------------------------------------
 
