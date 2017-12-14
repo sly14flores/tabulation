@@ -93,11 +93,18 @@ switch ($_GET['r']) {
 		}
 	}
 	
-	$contestant = $con2->getData("SELECT no, cluster_name FROM contestants WHERE id = $_POST[contestant_id]");
+	$contestant = $con2->getData("SELECT no, cluster_name, pictures FROM contestants WHERE id = $_POST[contestant_id]");
+	
+	$dir = "../pictures";
+	$avatar = "$dir/avatar.png";
+	$picture = "$dir/".$contestant[0]['pictures'];
+
+	// if (!file_exists($picture)) $picture = $avatar;
+	$picture = $avatar;
 	
 	$contestant_criteria = $con2->getData("SELECT scores.id, scores.contestant_id, scores.criteria_id, (SELECT criteria.description FROM criteria WHERE criteria.id = scores.criteria_id) description, (SELECT criteria.percentage FROM criteria WHERE criteria.id = scores.criteria_id) percentage, scores.score FROM scores LEFT JOIN criteria ON scores.criteria_id = criteria.id WHERE scores.judge_id = $_SESSION[judge_id] AND scores.contestant_id = $_POST[contestant_id] AND criteria.portion_id = $_POST[portion_id]");
 	
-	echo json_encode(array("no"=>$contestant[0]['no'],"contestant"=>$contestant[0]['cluster_name'],"criteria"=>$contestant_criteria));
+	echo json_encode(array("no"=>$contestant[0]['no'],"contestant"=>$contestant[0]['cluster_name'],"picture"=>$picture,"criteria"=>$contestant_criteria));
 	
 	break;
 	

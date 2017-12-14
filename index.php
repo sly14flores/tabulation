@@ -71,7 +71,6 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -97,7 +96,7 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
             </div>
       
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-8">
 				
 				  <ul class="nav nav-tabs" role="tablist">
 					<li ng-repeat="portion in portions" role="presentation" ng-class="{'active': views.portionIndex == $index}"><a href="#portion{{portion.id}}" aria-controls="portion{{portion.id}}" role="tab" data-toggle="tab" ng-click="logIndex($index,portion)">{{portion.description}}</a></li>
@@ -122,25 +121,32 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 								Tabulation: <span style="border: 0!important;" ng-show="views.contestant_no != 0?true:false">{{views.contestant_no}}:</span>&nbsp;&nbsp;<strong>{{views.contestant}}</strong><button type="button" class="btn btn-primary btn-sm pull-right" ng-click="scores(this)" ng-disabled="criteria.length == 0">{{(views.edit)?'Edit Scores':'Submit Scores'}}</button>
 							</div>
 							<div class="panel-body">
-							<div class="table-responsive">
-								<table class="table table-striped table-bordered table-hover">
-									<thead>
-										<tr><th>Criteria</th><th>Percentage</th><th>Score</th></tr>										
-									</thead>
-									<tbody>
-										<tr ng-repeat="criterion in criteria">
-											<td>{{criterion.description}}</td>
-											<td>{{criterion.percentage}}</td>
-											<td>
-												<input type="number" class="form-control" ng-disabled="views.edit" name="score" id="score{{$index}}" ng-model="criterion.score" min="1" max="{{criterion.percentage}}">
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!--<div class="panel-footer">
-								<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>
-							</div>-->
+								<div class="row">
+									<div class="col-md-4">
+										<img src="pictures/{{views.picture}}" alt="Picture" class="img-rounded">										
+									</div>
+									<div class="col-md-8">							
+										<div class="table-responsive">
+											<table class="table table-striped table-bordered table-hover">
+												<thead>
+													<tr><th>Criteria</th><th>Percentage</th><th>Score</th></tr>										
+												</thead>
+												<tbody>
+													<tr ng-repeat="criterion in criteria">
+														<td>{{criterion.description}}</td>
+														<td>{{criterion.percentage}}</td>
+														<td>
+															<input type="number" class="form-control" ng-disabled="views.edit" name="score" id="score{{$index}}" ng-model="criterion.score" min="1" max="{{criterion.percentage}}">
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<!--<div class="panel-footer">
+											<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>
+										</div>-->
+									</div>
+								</div>									
 							</div>
 						</div>
 						</div>
@@ -149,9 +155,8 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 					
                     <hr />
                 </div>
-				
-				
-                <div class="col-md-5">
+
+                <div class="col-md-4">
 					<div class="panel panel-default">
 						<div class="panel-heading">Standing<span style="padding-left: 10px; font-weight: bold;">({{views.currentPortion}})</span>
 							<div class="pull-right" >
@@ -160,25 +165,25 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 								  </button>
 							</div>							
 						</div>
-						<div class="panel-body">
-						<div class="table-responsive">
-							<table class="table table-striped table-bordered table-hover">
-								<thead>
-									<tr><th>#</th><th>Contestant</th><th>Score</th><th>Rank</th></tr>										
-								</thead>
-								<tbody>
-									<tr ng-repeat="contestant in standing">
-										<td>{{contestant.no}}</td>
-										<td>{{contestant.name}}</td>
-										<td>{{contestant.score}}</td>
-										<td>{{$index+1}}</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!--<div class="panel-footer">
-							<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>
-						</div>-->
+						<div class="panel-body">					
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered table-hover">
+									<thead>
+										<tr><th>#</th><th>Contestant</th><th>Score</th><th>Rank</th></tr>										
+									</thead>
+									<tbody>
+										<tr ng-repeat="contestant in standing">
+											<td>{{contestant.no}}</td>
+											<td>{{contestant.name}}</td>
+											<td>{{contestant.score}}</td>
+											<td>{{$index+1}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>						
+							<!--<div class="panel-footer">
+								<a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>
+							</div>-->
 						</div>
 					</div>					
                 </div>

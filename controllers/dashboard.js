@@ -106,6 +106,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 			
 			$scope.views.contestant_no = "No. "+response.data['no'];			
 			$scope.views.contestant = response.data['contestant'];
+			$scope.views.picture = response.data['picture'];
 			$scope.criteria = response.data['criteria'];
 			blockUI.hide();
 			
@@ -175,6 +176,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 		$scope.views.contestant_no = '';			
 		$scope.views.contestant = '';
+		$scope.views.picture = '';
 		$scope.criteria = [];
 		
 	};
