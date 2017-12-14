@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 14, 2017 at 04:13 PM
+-- Generation Time: Dec 14, 2017 at 04:18 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -46,6 +46,7 @@ CREATE TABLE `contestants` (
   `leader` varchar(100) DEFAULT NULL,
   `portions` varchar(100) DEFAULT NULL,
   `remarks` varchar(100) DEFAULT NULL,
+  `pictures` varchar(100) DEFAULT NULL,
   `is_active` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -53,15 +54,15 @@ CREATE TABLE `contestants` (
 -- Dumping data for table `contestants`
 --
 
-INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `portions`, `remarks`, `is_active`) VALUES
-(1, 1, 'Valirie Lete', NULL, '1,2', NULL, 1),
-(2, 2, 'Frenzilyn Alviar', NULL, '1,2,3', NULL, 1),
-(3, 3, 'Love Joy Luchina', NULL, '1,2', NULL, 1),
-(4, 4, 'Lady Anika Fabros', NULL, '1,2', NULL, 1),
-(5, 5, 'Ma Rosario Laureta', NULL, '1,2,3', NULL, 1),
-(6, 6, 'Regie Ann Quiban', NULL, '1,2', NULL, 1),
-(7, 7, 'Blesie Mayo', NULL, '1,2,3', NULL, 1),
-(8, 8, 'Pia Marie Tamayo', NULL, '1,2', NULL, 1);
+INSERT INTO `contestants` (`id`, `no`, `cluster_name`, `leader`, `portions`, `remarks`, `pictures`, `is_active`) VALUES
+(1, 1, 'Valirie Lete', NULL, '1,2', NULL, NULL, 1),
+(2, 2, 'Frenzilyn Alviar', NULL, '1,2,3', NULL, NULL, 1),
+(3, 3, 'Love Joy Luchina', NULL, '1,2', NULL, NULL, 1),
+(4, 4, 'Lady Anika Fabros', NULL, '1,2', NULL, NULL, 1),
+(5, 5, 'Ma Rosario Laureta', NULL, '1,2,3', NULL, NULL, 1),
+(6, 6, 'Regie Ann Quiban', NULL, '1,2', NULL, NULL, 1),
+(7, 7, 'Blesie Mayo', NULL, '1,2,3', NULL, NULL, 1),
+(8, 8, 'Pia Marie Tamayo', NULL, '1,2', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
