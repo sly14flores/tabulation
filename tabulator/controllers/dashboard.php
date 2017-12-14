@@ -24,6 +24,10 @@ switch ($_GET['r']) {
 	
 	foreach ($portions as $i => $portion) {
 		
+		# winners
+		$winners = $con->getData("SELECT * FROM winners_descriptions WHERE portion_id = ".$portion['id']." ORDER BY id");		
+		$portions[$i]['winners'] = $winners;
+		
 		$portions[$i]['judges'] = [];
 		$portions[$i]['overall'] = [];		
 		

@@ -152,6 +152,11 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 				  <div class="tab-content">
 					<div ng-repeat="portion in portions" role="tabpanel" class="tab-pane" ng-class="{'active': views.portionIndex == $index}" id="portion{{portion.id}}">
 						<hr>
+						<div class="pull-right" style="margin-bottom: 10px;">
+						  <button class="btn btn-info btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" ng-click="printWinners(portion)" style="padding: 5px 10px;">
+							<span class="glyphicon glyphicon-print"></span>
+						  </button>
+						</div>						
 						<div>
 							<h4>Overall</h4>
 							<table class="table table-bordered">
@@ -221,6 +226,9 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
     <script src="../assets/js/jquery.blockUI.js"></script>
     <script src="../assets/js/bootbox.min.js"></script>
 	
+    <script src="../jspdf/jspdf.min.js"></script>
+    <script src="../jspdf/jspdf.plugin.autotable.js"></script>
+	
     <!-- BOOTSTRAP SCRIPTS  -->
     <script src="../assets/js/bootstrap.js"></script>
     <script src="../bootstrap-notify-3.1.3/bootstrap-notify.min.js"></script>	
@@ -230,6 +238,7 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 	<script src="../modules/block-ui.js"></script>
 	<script src="../modules/bootstrap-modal.js"></script>
 	<script src="../modules/bootstrap-notify.js"></script>
+	<script src="../modules/jspdf.js"></script>
 	
 	<!-- controller -->
 	<script src="controllers/dashboard.js"></script>

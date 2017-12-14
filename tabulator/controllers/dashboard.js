@@ -1,7 +1,9 @@
-var app = angular.module('dashboard', ['block-ui','bootstrap-notify','bootstrap-modal']);
+var app = angular.module('dashboard', ['block-ui','bootstrap-notify','bootstrap-modal','jspdf-module']);
 
-app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,bootstrapNotify,blockUI,bootstrapModal) {
+app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,bootstrapNotify,blockUI,bootstrapModal,jspdf) {
 	
+	jspdf.init();
+
 	$scope.views = {};	
 	$scope.views.portionIndex = 0;
 	
@@ -150,6 +152,21 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 		scope.views.portionIndex = index;
 		
-	};	
+	};
+	
+	$scope.printWinners = function(portion) {
+		
+		var doc = new jsPDF({
+			orientation: 'portrait',
+			unit: 'pt',
+			format: [792, 612]
+		});
+		
+		
+		
+		var blob = doc.output("blob");
+		window.open(URL.createObjectURL(blob));		
+		
+	};
 
 });	
