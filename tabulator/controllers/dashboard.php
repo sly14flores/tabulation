@@ -14,6 +14,8 @@ switch ($_GET['r']) {
 	$con = new pdo_db();
 	
 	$portions = $con->getData("SELECT * FROM portions");
+	$title = $con->getData("SELECT title FROM preferences WHERE id = 1");
+	$title = (count($title))?$title[0]['title']:"Untitled";
 	
 	# for tables
 	$judges_list = $con->getData("SELECT id, CONCAT(first_name, ' ', last_name) name, remarks FROM judges");
@@ -24,12 +26,18 @@ switch ($_GET['r']) {
 	
 	foreach ($portions as $i => $portion) {
 		
+		# info
+		$portions[$i]['info'] = array(
+			"title"=>$title,
+			"portion"=>$portion['description']
+		);
+		
 		# winners
 		$winners = $con->getData("SELECT * FROM winners_descriptions WHERE portion_id = ".$portion['id']." ORDER BY id");		
 		$portions[$i]['winners'] = $winners;
 		
 		$portions[$i]['judges'] = [];
-		$portions[$i]['overall'] = [];		
+		$portions[$i]['overall'] = [];	
 		
 		# judges
 		foreach ($judges_list as $judge) {
