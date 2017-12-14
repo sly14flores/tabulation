@@ -123,10 +123,10 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-4">
-										<img src="pictures/{{views.picture}}" alt="Picture" class="img-rounded">										
+										<img src="pictures/{{views.picture}}" alt="Picture" class="img-rounded" style="width: 250px;">										
 									</div>
 									<div class="col-md-8">							
-										<div class="table-responsive">
+										<div class="table-responsive" style="margin-left: 10px;">
 											<table class="table table-striped table-bordered table-hover">
 												<thead>
 													<tr><th>Criteria</th><th>Percentage</th><th>Score</th></tr>										
