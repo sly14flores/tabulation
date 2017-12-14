@@ -139,3 +139,9 @@ Stack trace:
 [13-Dec-2017 16:31:59 Asia/Manila] PHP Notice:  Undefined variable: portion_id in C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php on line 133
 [13-Dec-2017 16:31:59 Asia/Manila] PHP Stack trace:
 [13-Dec-2017 16:31:59 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php:0
+[14-Dec-2017 15:59:58 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`tabulation`.`scores`, CONSTRAINT `scores_ibfk_3` FOREIGN KEY (`contestant_id`) REFERENCES `contestants` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION) in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php:82
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php(82): PDOStatement->execute(Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\tabulation\controllers\dashboard.php(92): pdo_db->insertData(Array)
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\tabulation\db.php on line 82
