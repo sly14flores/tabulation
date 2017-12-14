@@ -7,8 +7,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 	
 	/*
 	** startup
-	*/
-	
+	*/	
 	$http({
 	  method: 'POST',
 	  url: 'controllers/dashboard.php?r=startup'
@@ -20,7 +19,7 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 	}, function myError(response) {
 		
-	});	
+	});
 	
 	$scope.editContestant = function(contestant) {
 		
@@ -130,17 +129,26 @@ app.controller('dashboardCtrl',function($window,$timeout,$interval,$http,$scope,
 		
 	};
 	
+	$scope.refreshStanding = function() {
+		
+		$http({
+		  method: 'POST',
+		  url: 'controllers/dashboard.php?r=startup'
+		}).then(function mySucces(response) {
+
+			$scope.judges_list = response.data['judges_list'];
+			$scope.contestants_list = response.data['contestants_list'];
+			$scope.portions = response.data['portions'];
+			
+		}, function myError(response) {
+			
+		});		
+		
+	};
+	
 	$scope.logIndex = function(scope,index,portion) {
 		
 		scope.views.portionIndex = index;
-		// if (scope.views.currentContestant) scope.tabulate(scope.views.currentContestant,portion.id);
-		// scope.views.currentPortion = portion.description;
-		// scope.views.currentPortionId = portion.id;
-		
-		// $timeout(function() {
-			// scope.refreshStanding(scope);
-			// scope.portionContestants();
-		// },300);
 		
 	};	
 

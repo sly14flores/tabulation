@@ -141,6 +141,11 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 			<hr>
 			<div class="row">
                 <div class="col-md-12">
+					<div class="pull-right" >
+						  <button class="btn btn-success btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" ng-click="refreshStanding(this)" style="padding: 5px 10px;">
+							<span class="glyphicon glyphicon-refresh"></span>
+						  </button>
+					</div>				
 				  <ul class="nav nav-tabs" role="tablist">
 					<li ng-repeat="portion in portions" role="presentation" ng-class="{'active': views.portionIndex == $index}"><a href="#portion{{portion.id}}" aria-controls="portion{{portion.id}}" role="tab" data-toggle="tab" ng-click="logIndex(this,$index,portion)">{{portion.description}}</a></li>
 				  </ul>
@@ -152,12 +157,12 @@ $preferences = ($con->getData("SELECT * FROM preferences WHERE id = 1"))[0];
 							<table class="table table-bordered">
 								<thead>
 									<tr>
-										<th style="width: 50px;">#</th><th>Contestant</th><th>Score</th><th>Rank</th>
+										<th style="width: 50px;">#</th><th>Contestant</th><th>Score</th><th>Average</th><th>Rank</th>
 									</tr>								
 								</thead>
 								<tbody ng-repeat="o in portion.overall">
 									<tr>
-										<td>{{o.no}}</td><td>{{o.cluster_name}}</td><td>{{o.overall_total_scores}}</td><td><strong>{{o.overall_rank}}</strong></td>
+										<td>{{o.no}}</td><td>{{o.cluster_name}}</td><td>{{o.overall_total_scores}}</td><td>{{o.average}}</td><td><strong>{{o.overall_rank}}</strong></td>
 									</tr>
 								</tbody>
 							</table>

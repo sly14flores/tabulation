@@ -155,7 +155,7 @@ $_SESSION['preferences'] = ($con->getData("SELECT * FROM preferences WHERE id = 
 					<div class="panel panel-default">
 						<div class="panel-heading">Standing<span style="padding-left: 10px; font-weight: bold;">({{views.currentPortion}})</span>
 							<div class="pull-right" >
-								  <button class="btn btn-success btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" ng-click="refreshStanding(this)" style="padding: 5px 10px;">
+								  <button class="btn btn-success btn-xs" type="button" data-toggle="dropdown" aria-expanded="true" ng-click="refreshStanding()" style="padding: 5px 10px;">
 									<span class="glyphicon glyphicon-refresh"></span>
 								  </button>
 							</div>							

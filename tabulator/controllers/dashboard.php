@@ -20,6 +20,8 @@ switch ($_GET['r']) {
 	$contestants_list = $con->getData("SELECT id, IF(no=0,'',no) cn, cluster_name, IF(is_active=1,'Yes','No') participated FROM contestants");	
 	$_contestants = $con->getData("SELECT * FROM contestants WHERE is_active = 1 ORDER BY no");
 	
+	$no_of_judges = (count($judges_list))?count($judges_list):1;
+	
 	foreach ($portions as $i => $portion) {
 		
 		$portions[$i]['judges'] = [];
@@ -65,7 +67,7 @@ switch ($_GET['r']) {
 		$rank_overall = [];		
 		foreach ($contestants_overall as $ii => $contestant_overall) {
 			
-			$contestant_overall['overall_total_scores'] = 0;
+			$overall_total_scores = 0;
 			
 			foreach ($portions[$i]['judges'] as $judge) {
 				
@@ -73,17 +75,20 @@ switch ($_GET['r']) {
 					
 					if ($contestant_scores['id'] == $contestant_overall['id']) {
 						
-						$contestant_overall['overall_total_scores'] += $contestant_scores['total_scores'];						
+						$overall_total_scores += $contestant_scores['total_scores'];						
 						
 					};
 					
-				};
-				
+				};				
 
-
-			};			
+			};							
 			
-			$rank_overall[] = $contestant_overall['overall_total_scores'];			
+			$contestant_overall['overall_total_scores'] = $overall_total_scores;
+			
+			$average = $overall_total_scores/$no_of_judges;
+			$contestant_overall['average'] = $average;			
+			
+			$rank_overall[] = $overall_total_scores;
 			
 			$portions[$i]['overall'][] = $contestant_overall;
 
